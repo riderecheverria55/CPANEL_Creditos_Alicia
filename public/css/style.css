@@ -11291,8 +11291,8 @@ fieldset:disabled a {
 
 .btn-dark, .navbar.default-layout-navbar.navbar-dark .navbar-menu-wrapper .navbar-nav .nav-item .nav-link .btn-primary, .navbar.default-layout-navbar.navbar-dark .navbar-menu-wrapper .navbar-nav .nav-item .nav-link .wizard > .actions a, .wizard > .actions .navbar.default-layout-navbar.navbar-dark .navbar-menu-wrapper .navbar-nav .nav-item .nav-link a {
   color: #fff;
-  background-color: #006be9;
-  border-color: #006be9;
+  background-color: #cd1819;
+  border-color: #cd1819;
 }
 
 .btn-dark:hover, .navbar.default-layout-navbar.navbar-dark .navbar-menu-wrapper .navbar-nav .nav-item .nav-link .btn-primary:hover, .navbar.default-layout-navbar.navbar-dark .navbar-menu-wrapper .navbar-nav .nav-item .nav-link .wizard > .actions a:hover, .wizard > .actions .navbar.default-layout-navbar.navbar-dark .navbar-menu-wrapper .navbar-nav .nav-item .nav-link a:hover {
