@@ -120,7 +120,7 @@
         <div class="content-wrapper">
           <div class="page-header">
             <h3 class="page-title">
-              Datos del usuario
+              Editar usuario
             </h3>
           </div>
           <div class="card">
