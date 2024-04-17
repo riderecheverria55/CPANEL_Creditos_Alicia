@@ -1,5 +1,3 @@
-
-
 <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
@@ -66,11 +64,14 @@
                     </a>
                     <div class="collapse" id="ui-advanced">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/dragula.html">Roles</a>
+                        <li class="nav-item">
+                                <a class="nav-link" href="">Usuarios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/ui-features/clipboard.html">Permisos</a>
+                                <a class="nav-link" href="">Roles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Permisos</a>
                             </li>
                         </ul>
                     </div>
