@@ -39,3 +39,16 @@ Route::get('/roles_crear', function () {
 Route::get('/roles_editar', function () {
     return view('admin.roles.editar');
 });
+
+
+/*PERMISOS*/
+Route::get('/permisos', function () {
+    return view('admin.permisos.index');
+});
+Route::get('/permisos_crear', function () {
+    return view('admin.permisos.crear');
+});
+Route::get('/permisos_editar', function () {
+    return view('admin.permisos.editar');
+});
+
