@@ -52,3 +52,16 @@ Route::get('/permisos_editar', function () {
     return view('admin.permisos.editar');
 });
 
+/*CLIENTES*/
+Route::get('/cliente', function () {
+    return view('admin.cliente.index');
+});
+Route::get('/cliente_crear', function () {
+    return view('admin.cliente.crear');
+});
+Route::get('/cliente_editar', function () {
+    return view('admin.cliente.editar');
+});
+Route::get('/cliente_ver', function () {
+    return view('admin.cliente.ver');
+});

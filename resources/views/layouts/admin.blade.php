@@ -75,6 +75,7 @@
     <script src="{{asset('js/settings.js')}}"></script>
     <script src="{{asset('js/todolist.js')}}"></script>
     <script src="{{asset('js/dashboard.js')}}"></script>
+    <script src="{{asset('js/script_qr.js')}}"></script>
 
      <!-- plugins:js -->
  
