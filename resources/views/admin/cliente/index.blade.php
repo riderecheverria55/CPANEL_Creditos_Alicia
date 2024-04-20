@@ -134,12 +134,14 @@ button:active {
                                                     <tr>
                                                         <th>Id</th>
                                                         <th>Nombre</th>
-                                                        <th>Numero CI</th>
+                                                        <th>Apellido P</th>
+                                                        <th>Apellido M</th>
+                                                        <th>N CI</th>
                                                         <th>Rason social</th>
-                                                        <th>Numero NIT</th>
-                                                        <th>Numero celular 1</th>
-                                                        <th>Numero celular 2</th>
-                                                        <th>Correo electronico</th>
+                                                        <th>N NIT</th>
+                                                        <th>N celular 1</th>
+                                                        <th>N celular 2</th>
+                                                        <th>Correo gmail</th>
                                                         <th>Ubicación</th>
                                                         <th>Imagen QR</th>
                                                         <th>Acciones</th>
@@ -148,7 +150,9 @@ button:active {
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">1</th>
-                                                        <td> juan zuarez</td>
+                                                        <td> juan</td>
+                                                        <td>  zuarez</td>
+                                                        <td> garcia</td>
                                                         <td>3456768 </td>
                                                         <td>registro </td>
                                                         <td>34567</td>

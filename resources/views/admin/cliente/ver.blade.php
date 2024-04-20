@@ -103,7 +103,17 @@
                     <li>
                         <i class="fa fa-user"></i>
                         <strong><b>Nombre:</b></strong>
-                        <span class="text-muted">Juan Zuárez</span>
+                        <span class="text-muted">Juan</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-user"></i>
+                        <strong><b>Apellido P:</b></strong>
+                        <span class="text-muted">Zuárez</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-user"></i>
+                        <strong><b>Apellido M:</b></strong>
+                        <span class="text-muted">Garcia</span>
                     </li>
                     <li>
                         <i class="fa fa-id-card"></i>
@@ -150,6 +160,8 @@
                 <img src="../imagenes/imagen_qr.png" alt="sample" class="rounded mw-100">
                 <h4 class="mt-3">Ubicación QR</h4>
             </div>
+            <br>
+            <br>
             <br>
             <br>
             <br>
