@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//clientes
+Route::get('clientes',[ClienteController::class, 'index'])->name('clientes.index');
+Route::get('clientes/{id}/show',[ClienteController::class, 'show'])->name('clientes.show');
+Route::get('clientes/create',[ClienteController::class, 'create'])->name('clientes.create');
+Route::post('clientes/store',[ClienteController::class, 'store'])->name('clientes.store');
+Route::delete('clientes/destroy/{id}',[ClienteController::class, 'destroy'])->name('clientes.destroy');
+Route::get('clientes/{id}/edit',[ClienteController::class, 'edit'])->name('clientes.edit');
+Route::put('clientes/update/{id}',[ClienteController::class, 'update'])->name('clientes.update');
+
+
+
+
+
+
+
+
+
+Route::get('/', function () {
+    return view('admin.principal');
+});
 Route::get('login', function () {
     return view('login.login');
 });
