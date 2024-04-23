@@ -1,10 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use BaconQrCode\Encoder\QrCode;
+use BaconQrCode\Renderer\Image\Png;
 class ClienteController extends Controller
 {
     public function index(Request $request)
@@ -44,7 +47,14 @@ class ClienteController extends Controller
 
   public function store(Request $request)
   {
-      
+
+    // $url = $request->input('url');
+    // $nitCliente = $request->input('nit');
+    // $qrCode = QrCode::format('png')->size(300)->generate($url);
+    // $nombreImagen = 'qr_' . $nitCliente . '_' . time() . '.png';
+    // Storage::put('public/images/qr/' . $nombreImagen, $qrCode);
+
+    
       $persona = new Cliente();
       $persona->NOMBRE = strtoupper($request->input('nombre'));
       $persona->APELLIDO = strtoupper($request->input('apellido'));
@@ -52,6 +62,9 @@ class ClienteController extends Controller
       $persona->CELULAR_2 = $request->input('celular_2');
       $persona->DIRECCION = strtoupper( $request->input('direccion'));
       $persona->URL_DIRECCION = strtoupper( $request->input('url'));
+      $persona->IMAGEN_QR = 'qr_prueba.png';
+      //$persona->IMAGEN_QR = $nombreImagen;
+      
       $persona->NIT = strtoupper( $request->input('nit'));
       $persona->save();
       return redirect()->route('clientes.index')->with('mensaje', 'ok');

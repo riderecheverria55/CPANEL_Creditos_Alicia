@@ -12,6 +12,6 @@ class Cliente extends Model
     protected $table = 'tbl_cliente';
     protected $primaryKey = 'COD_CLIENTE';
     protected $fillable = ['COD_CLIENTE','NOMBRE','APELLIDO','CELULAR','CELULAR_2',
-                            'DIRECCION','URL_DIRECCION','NIT','ESTADO','CREATED_AT','UPDATED_AT' 
+                            'DIRECCION','URL_DIRECCION','IMAGEN_QR','NIT','ESTADO','CREATED_AT','UPDATED_AT' 
                           ];
 }
