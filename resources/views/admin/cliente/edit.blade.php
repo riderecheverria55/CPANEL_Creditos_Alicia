@@ -133,11 +133,7 @@
                 <label for="campo4">Celular 2:</label>
                 <input type="text" value="{{$clientes->CELULAR_2}}" id="campo4" name="celular_2"><br>
 
-                <label for="campo5">Direccion:</label>
-                <input type="text" id="campo5" value="{{$clientes->DIRECCION}}" name="direccion" required><br>
-
-                <label for="campo6">Ingresar URL ubicacion GPS:</label>
-                <input type="text" id="campo6" value="{{$clientes->URL_DIRECCION}}" name="url" required><br>
+               
             
         </div>
         <!-- Segunda partición -->
@@ -146,14 +142,23 @@
                 <br>
                 <br>
                 <br>
+                <label for="campo5">Direccion:</label>
+                <input type="text" id="campo5" value="{{$clientes->DIRECCION}}" name="direccion" required><br>
+
+                <label for="campo6">Ingresar URL ubicacion GPS:</label>
+                <input type="text" id="campo6" value="{{$clientes->URL_DIRECCION}}" name="url" required><br>
+
                 <label for="campo7">Nit:</label>
                 <input type="text" id="campo7" name="nit" value="{{$clientes->NIT}}" ><br>
             
                 <br>
+                <br>
+                <br>
+                <br>
                 <button type="submit" onclick="qr()" class="btn btn-dark mr-2">Registrar</button>
             </form action="{{ route('clientes.store') }}" method="POST">
                 <a href="{{route('clientes.index')}}" class="btn btn-dark">Cancelar</a>  
-                <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu" class="btn btn-dark" target="_blank">Google Map</a>
+                <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu" class="btn btn-dark" target="_blank">Google Map    <i class="fa fa-map"></i></a>
 
            <!-- IMAGEN QR-->
           
