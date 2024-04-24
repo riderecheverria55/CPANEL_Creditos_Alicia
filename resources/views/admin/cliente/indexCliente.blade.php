@@ -48,12 +48,12 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>NOMBRE</th>
-                                                        <th>APELLIDO</th>
-                                                        <th>CELULAR</th>
-                                                        <th>CELULAR 2</th>
-                                                        <th>NIT</th>
-                                                        <th>DIRECCION</th>
+                                                        <th class="text-center">NOMBRE</th>
+                                                        <th class="text-center">APELLIDOS</th>
+                                                        <th class="text-center">CELULAR</th>
+                                                        <th class="text-center">CELULAR 2</th>
+                                                        <th class="text-center">NIT</th>
+                                                        <th class="text-center">DIRECCION</th>
                                                         <th>Acciones</th>
                                                     </tr>
                                                 </thead>
@@ -62,12 +62,12 @@
                                                     @foreach ($clientes as $item)
                                                       <tr>
                                                         <td  class="text-center" scope="row"><?php echo $contador;?></td>
-                                                        <td class="text-center">{{$item->NOMBRE}}</td>
-                                                        <td class="text-center">{{$item->APELLIDO}}</td>
-                                                        <td class="text-center">{{$item->CELULAR}}</td>
-                                                        <td class="text-center">{{$item->CELULAR_2}}</td>
-                                                        <td class="text-center">{{$item->NIT}}</td>
-                                                        <td class="text-center">{{$item->DIRECCION}}</td>
+                                                        <td>{{$item->NOMBRE}}</td>
+                                                        <td>{{$item->APELLIDO}}</td>
+                                                        <td>{{$item->CELULAR}}</td>
+                                                        <td>{{$item->CELULAR_2}}</td>
+                                                        <td>{{$item->NIT}}</td>
+                                                        <td>{{$item->DIRECCION}}</td>
                                                         <td style="width: 20%;">
                                                             <a class="btn btn-outline-warning"  href="{{ route('clientes.show', $item->COD_CLIENTE) }}">
                                                                 <i class="fa fa-eye" aria-hidden="true"></i>

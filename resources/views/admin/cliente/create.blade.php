@@ -122,7 +122,7 @@
                 <label for="campo1">Nombre:</label>
                 <input type="text" id="campo1" name="nombre" required><br>
 
-                <label for="campo2">Apellido</label>
+                <label for="campo2">Apellidos</label>
                 <input type="text" id="campo2" name="apellido" required><br>
 
                 <label for="campo3">Celular :</label>
@@ -152,7 +152,7 @@
                 <button type="submit" onclick="qr()" class="btn btn-dark mr-2">Registrar</button>
             </form action="{{ route('clientes.store') }}" method="POST">
                 <a href="{{route('clientes.index')}}" class="btn btn-dark">Cancelar</a>  
-                <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu" class="btn btn-dark" target="_blank">Google Map    <i class="fa fa-map"></i></a> 
+                <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu" class="btn btn-dark" target="_blank">Mapa GPS  <i class="fa fa-map"></i></a> 
                 
 
            <!-- IMAGEN QR-->

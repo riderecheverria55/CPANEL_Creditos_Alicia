@@ -105,7 +105,7 @@
                     </li>
                     <li>
                         <i class="fa fa-user"></i>
-                        <strong><b>Apellido</b></strong>
+                        <strong><b>Apellidos</b></strong>
                         <span class="text-muted">{{$clientes->APELLIDO}}</span>
                     </li>
                    
