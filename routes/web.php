@@ -33,8 +33,13 @@ Route::put('clientes/update/{id}',[ClienteController::class, 'update'])->name('c
 Route::get('/', function () {
     return view('admin.principal');
 });
+/*INICIO DE CECION*/
 Route::get('login', function () {
     return view('login.login');
+});
+/*REGISTRARSE*/
+Route::get('registrar', function () {
+    return view('login.registrar');
 });
 
 /*USUARIOS*/
