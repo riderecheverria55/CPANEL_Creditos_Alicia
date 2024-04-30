@@ -14656,7 +14656,7 @@ button.close {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   pointer-events: auto;
   background-color: #f2f2f2;
   background-clip: padding-box;
@@ -24068,7 +24068,7 @@ dl li {
 }
 
 .modal .modal-dialog .modal-content .modal-body {
-  padding: 15px 5px;
+  padding: 15px 15px;
 }
 
 .modal .modal-dialog .modal-content .modal-footer {
