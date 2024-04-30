@@ -12,7 +12,8 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
     <link rel="stylesheet" href="{{asset('plugins/sweetalert2/dist/sweetalert2.min.css')}}">
-    
+    <link href="{{asset('css/formulario_modal.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/style_show.css')}}" rel="stylesheet" />
 </head>
 
 <body>
