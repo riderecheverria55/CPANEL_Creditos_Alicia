@@ -195,12 +195,13 @@
                                     <br>
                                     <br>
                                     <br>
+                                    <div class="derecha">
                                     <button onclick="qr()" class="btn btn-dark mr-2">Registrar</button>
                                     <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a> 
                                     <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu"
                                         class="btn btn-dark">MAPA <i class="fa fa-map-marker" aria-hidden="true"></i>
                                     </a>
-                                    <div id="right">
+                                    </div>
                                 </form>
                             </div>
                         </div>
