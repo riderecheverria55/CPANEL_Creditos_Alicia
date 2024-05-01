@@ -90,3 +90,8 @@ Route::get('/cliente_editar', function () {
 Route::get('/cliente_ver', function () {
     return view('admin.cliente.ver');
 });
+
+/*PROVEEDORES*/
+Route::get('/proveedores', function () {
+    return view('admin.proveedores.index');
+});

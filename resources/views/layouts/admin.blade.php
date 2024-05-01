@@ -13,7 +13,7 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
     <link href="{{asset('css/formulario_modal.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/style_show.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/formulario_modal_editar.css')}}" rel="stylesheet" />
     <!-- plugins:css -->
     
     @yield('styles')
