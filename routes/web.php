@@ -95,3 +95,8 @@ Route::get('/cliente_ver', function () {
 Route::get('/proveedores', function () {
     return view('admin.proveedores.index');
 });
+
+/*SUCRURSALES*/
+Route::get('/sucursal', function () {
+    return view('admin.sucursal.index');
+});

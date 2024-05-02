@@ -1,0 +1,20 @@
+   /* Styling for select dropdown */
+   select {
+    width: 97%;
+    padding: 6px;
+    margin-bottom: 0px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #495057;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Styling for select dropdown options */
+select option {
+    background-color: #fff;
+    color: #495057;
+}

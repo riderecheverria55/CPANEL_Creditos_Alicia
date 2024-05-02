@@ -13,7 +13,8 @@
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
     <link rel="stylesheet" href="{{asset('plugins/sweetalert2/dist/sweetalert2.min.css')}}">
     <link href="{{asset('css/formulario_modal.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/style_show.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/modal_crear_proveedor.css')}}" rel="stylesheet" />
+    
 </head>
 
 <body>
@@ -74,7 +75,27 @@
                             <span class="menu-title">Inicio</span>
                         </a>
                     </li>
-                 
+                    <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false"
+                        aria-controls="ui-advanced">
+                        <i class="fas fa-clipboard-list menu-icon"></i>
+                        <span class="menu-title">Gestion de Usuarios</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="ui-advanced">
+                        <ul class="nav flex-column sub-menu">
+                        <li class="nav-item">
+                                <a class="nav-link" href="">Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Roles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="">Permisos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
                             aria-controls="ui-basic">
@@ -90,6 +111,40 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="fas fa-table menu-icon"></i>
+              <span class="menu-title">Gestion de proveedor</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Proveedor</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index-2.html">
+              <i class="fa fa-home menu-icon"></i>
+              <span class="menu-title">Gestion de sucrsales</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="fas fa-window-restore menu-icon"></i>
+              <span class="menu-title">Inventario</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Producto </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/login-2.html"> Categoria </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Marca </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/register-2.html">  </a></li>
+                <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html">  </a></li>
+              </ul>
+            </div>
+          </li>
                 </ul>
             </nav>
           <!-- partial -->
@@ -179,6 +234,7 @@
     <script src="{{asset('js/todolist.js')}}"></script>
     <script src="{{asset('js/dashboard.js')}}"></script>
     <script src="{{asset('plugins/sweetalert2/dist/sweetalert2.min.js')}}"></script>
+    <script src="{{asset('js/select2.js')}}"></script>
     @yield('script')
 </body>
 
