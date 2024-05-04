@@ -169,12 +169,14 @@ return [
         /*
          * Application Service Providers...
          */
+        LaravelQRCode\Providers\QRCodeServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        //LaravelQRCode\Providers\QRCodeServiceProvider::class, 
+        //SimpleSoftwareIO\QrCode\ServiceProvider::class,
     ],
 
     /*
@@ -226,8 +228,9 @@ return [
         'Session' => Illuminate\Support\Facades\Session::class,
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
-        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-
+        'QRCode' => LaravelQRCode\Facades\QRCode::class, 
+        //'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        //'QRCode' => LaravelQRCode\Facades\QRCode::class,  
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,

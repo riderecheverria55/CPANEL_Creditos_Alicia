@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 //use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 use Illuminate\Http\Request;
 use App\Models\Cliente;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
-use BaconQrCode\Encoder\QrCode;
-use BaconQrCode\Renderer\Image\Png;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 class ClienteController extends Controller
 {
     public function index(Request $request)
     {
+
         $dato = $request->get('buscar');
         
         if (!empty($dato)) {
@@ -28,7 +30,6 @@ class ClienteController extends Controller
                 ->take(10)
                 ->get();
         }
-        //dd($clientes);
         return view('admin.cliente.indexCliente', compact('clientes'));
     }
     public function show($id)
@@ -48,28 +49,27 @@ class ClienteController extends Controller
   public function store(Request $request)
   {
 
-    // $url = $request->input('url');
-    // $nitCliente = $request->input('nit');
-    // $qrCode = QrCode::format('png')->size(300)->generate($url);
-    // $nombreImagen = 'qr_' . $nitCliente . '_' . time() . '.png';
-    // Storage::put('public/images/qr/' . $nombreImagen, $qrCode);
-
-    
-      $persona = new Cliente();
-      $persona->NOMBRE = strtoupper($request->input('nombre'));
-      $persona->APELLIDO = strtoupper($request->input('apellido'));
-      $persona->CELULAR = $request->input('celular');
-      $persona->CELULAR_2 = $request->input('celular_2');
-      $persona->DIRECCION = strtoupper( $request->input('direccion'));
-      $persona->URL_DIRECCION = strtoupper( $request->input('url'));
-      $persona->IMAGEN_QR = 'qr_prueba.png';
-      //$persona->IMAGEN_QR = $nombreImagen;
-      
-      $persona->NIT = strtoupper( $request->input('nit'));
-      $persona->save();
-      return redirect()->route('clientes.index')->with('mensaje', 'ok');
-      //return redirect()->route('admin.cliente.indexCliente')->with('mensaje', 'ok');
+    $url = $request->input('url');
+    $ciCliente = $request->input('ci');
+    $qrCode = QrCode::format('png')->size(300)->generate($url);
+    $nombreArchivo = 'qr'. $ciCliente . '.png';
+    $path = public_path('imagenes/qr/' . $nombreArchivo);
+    file_put_contents($path, $qrCode);
+    $cliente = new Cliente();
+    $cliente->NOMBRE = strtoupper($request->input('nombre'));
+    $cliente->APELLIDO = strtoupper($request->input('apellido'));
+    $cliente->CELULAR = $request->input('celular');
+    $cliente->CELULAR_2 = $request->input('celular_2');
+    $cliente->DIRECCION = strtoupper( $request->input('direccion'));
+    $cliente->URL_DIRECCION = strtoupper( $request->input('url'));
+    $cliente->CORREO =  $request->input('correo');
+    $cliente->CI =  $request->input('ci');
+    $cliente->IMAGEN_QR = $nombreArchivo;
+    $cliente->NIT = strtoupper( $request->input('nit'));
+    $cliente->save();
+    return redirect()->route('clientes.index')->with('mensaje', 'ok');
   }
+  
   public function destroy($id)
   {
     $cliente = Cliente::find($id);
@@ -87,16 +87,53 @@ class ClienteController extends Controller
   public function update(Request $request, $id)
   {
     
-    $registro = Cliente::findOrFail($id);
-    $registro->NOMBRE = strtoupper($request->input('nombre'));
-      $registro->APELLIDO = strtoupper($request->input('apellido'));
-      $registro->CELULAR = $request->input('celular');
-      $registro->CELULAR_2 = $request->input('celular_2');
-      $registro->DIRECCION = strtoupper( $request->input('direccion'));
-      $registro->URL_DIRECCION = strtoupper( $request->input('url'));
-      $registro->NIT = strtoupper( $request->input('nit'));
+    $cliente = Cliente::findOrFail($id);
+    $direccionUrl = strtoupper( $request->input('url'));
+    if ($direccionUrl !== $cliente->URL_DIRECCION)
+    {
+      //se Genera un nuevo qr
+      $nombreArchivo = $cliente->IMAGEN_QR;
+      $rutaArchivo = public_path('imagenes/qr/' . $nombreArchivo);
+      if (file_exists($rutaArchivo)) {
+        unlink($rutaArchivo);
+       
+      }
+      $url = $request->input('url');
+      $ciCliente = $request->input('ci');
+      $qrCode = QrCode::format('png')->size(300)->generate($url);
+      $nombreArchivo = 'qr'. $ciCliente . '.png';
+      $path = public_path('imagenes/qr/' . $nombreArchivo);
+      file_put_contents($path, $qrCode);
+      $cliente->NOMBRE = strtoupper($request->input('nombre'));
+      $cliente->APELLIDO = strtoupper($request->input('apellido'));
+      $cliente->CELULAR = $request->input('celular');
+      $cliente->CELULAR_2 = $request->input('celular_2');
+      $cliente->DIRECCION = strtoupper( $request->input('direccion'));
+      $cliente->URL_DIRECCION = strtoupper( $request->input('url'));
+      $cliente->NIT = strtoupper( $request->input('nit'));
+      $cliente->IMAGEN_QR = $nombreArchivo;
+      $cliente->CORREO =  $request->input('correo');
+      $cliente->CI =  $request->input('ci');
+      $cliente->save();
+      
+    }
+    else{
+      $cliente->NOMBRE = strtoupper($request->input('nombre'));
+      $cliente->APELLIDO = strtoupper($request->input('apellido'));
+      $cliente->CELULAR = $request->input('celular');
+      $cliente->CELULAR_2 = $request->input('celular_2');
+      $cliente->DIRECCION = strtoupper( $request->input('direccion'));
+      $cliente->URL_DIRECCION = strtoupper( $request->input('url'));
+      $cliente->NIT = strtoupper( $request->input('nit'));
+      
+      $cliente->CORREO =  $request->input('correo');
+      $cliente->CI =  $request->input('ci');
+      $cliente->save();
+    }
     
-    $registro->save();
+    
+    
+    // $cliente->save();
 
     return redirect()->route('clientes.index')->with('mensaje', 'ok');
   }

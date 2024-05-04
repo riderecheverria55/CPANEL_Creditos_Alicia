@@ -144,7 +144,10 @@
                 <br>
                 <label for="campo5">Direccion:</label>
                 <input type="text" id="campo5" value="{{$clientes->DIRECCION}}" name="direccion" required><br>
-
+                <label for="campo5">Correo:</label>
+                <input type="text" id="campo5" value="{{$clientes->CORREO}}" name="correo" type="email" required><br>
+                <label for="campo5">C.I:</label>
+                <input type="text" id="campo5" value="{{$clientes->CI}}" name="ci" type="number" required><br>
                 <label for="campo6">Ingresar URL ubicacion GPS:</label>
                 <input type="text" id="campo6" value="{{$clientes->URL_DIRECCION}}" name="url" required><br>
 

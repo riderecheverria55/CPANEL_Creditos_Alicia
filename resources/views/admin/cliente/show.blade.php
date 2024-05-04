@@ -138,7 +138,7 @@
         <!-- Ubicacion QR -->
         <div class="col-lg-5">
             <div class="text-center pb-4">
-                <img src="{{ asset('imagenes/qr/' . $clientes->IMAGEN_QR) }}" class="rounded mw-100" alt="Código QR">
+                <img src="{{ asset('imagenes/qr/' . $clientes->IMAGEN_QR) }}" style="width: 200px;" class="rounded mw-100" alt="Código QR">
                 {{-- //<img src="../imagenes/imagen_qr.png" alt="sample" class="rounded mw-100"> --}}
                 <h4 class="mt-3">Ubicación QR</h4>
             </div>
