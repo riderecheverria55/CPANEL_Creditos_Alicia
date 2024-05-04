@@ -33,8 +33,13 @@ Route::put('clientes/update/{id}',[ClienteController::class, 'update'])->name('c
 Route::get('/', function () {
     return view('admin.principal');
 });
+/*INICIO DE CECION*/
 Route::get('login', function () {
     return view('login.login');
+});
+/*REGISTRARSE*/
+Route::get('registrar', function () {
+    return view('login.registrar');
 });
 
 /*USUARIOS*/
@@ -84,4 +89,14 @@ Route::get('/cliente_editar', function () {
 });
 Route::get('/cliente_ver', function () {
     return view('admin.cliente.ver');
+});
+
+/*PROVEEDORES*/
+Route::get('/proveedores', function () {
+    return view('admin.proveedores.index');
+});
+
+/*SUCRURSALES*/
+Route::get('/sucursal', function () {
+    return view('admin.sucursal.index');
 });
