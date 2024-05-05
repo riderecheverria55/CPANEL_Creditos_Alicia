@@ -119,18 +119,18 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Proveedor</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('proveedores.index')}}">Proveedor</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="index-2.html">
+            <a class="nav-link" href="{{route('sucursales.index')}}">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Gestion de sucrsales</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" data-toggle="collapse" href="{{route('sucursales.index')}}" aria-expanded="false" aria-controls="auth">
               <i class="fas fa-window-restore menu-icon"></i>
               <span class="menu-title">Inventario</span>
               <i class="menu-arrow"></i>

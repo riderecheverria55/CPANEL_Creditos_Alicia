@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\SucursalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,10 +24,19 @@ Route::delete('clientes/destroy/{id}',[ClienteController::class, 'destroy'])->na
 Route::get('clientes/{id}/edit',[ClienteController::class, 'edit'])->name('clientes.edit');
 Route::put('clientes/update/{id}',[ClienteController::class, 'update'])->name('clientes.update');
 
+//proveedores
 
+Route::get('proveedores',[ProveedorController::class, 'index'])->name('proveedores.index');
+Route::post('proveedores/store',[ProveedorController::class, 'store'])->name('proveedores.store');
+Route::delete('proveedores/destroy/{id}',[ProveedorController::class, 'destroy'])->name('proveedores.destroy');
+Route::put('proveedores/update/{id}',[ProveedorController::class, 'update'])->name('proveedores.update');
 
+// Sucursales
 
-
+Route::get('sucursales',[SucursalController::class, 'index'])->name('sucursales.index');
+Route::post('sucursales/store',[SucursalController::class, 'store'])->name('sucursales.store');
+Route::delete('sucursales/destroy/{id}',[SucursalController::class, 'destroy'])->name('sucursales.destroy');
+Route::put('sucursales/update/{id}',[SucursalController::class, 'update'])->name('sucursales.update');
 
 
 
@@ -92,9 +103,9 @@ Route::get('/cliente_ver', function () {
 });
 
 /*PROVEEDORES*/
-Route::get('/proveedores', function () {
-    return view('admin.proveedores.index');
-});
+// Route::get('/proveedor', function () {
+//     return view('admin.proveedores.index');
+// });
 
 /*SUCRURSALES*/
 Route::get('/sucursal', function () {
