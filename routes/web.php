@@ -111,3 +111,35 @@ Route::get('/cliente_ver', function () {
 Route::get('/sucursal', function () {
     return view('admin.sucursal.index');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PROVEEDORES  FRONT END*/
+Route::get('/proveedoresP', function () {
+    return view('admin.proveedores.indexP');
+});
+
+
+/*SUCRURSALES  FRONT END*/
+Route::get('/sucursalP', function () {
+    return view('admin.sucursal.indexP');
+});
+
+/*ALMACEN FRONT END*/
+Route::get('/almacenP', function () {
+    return view('admin.almacen.indexP');
+});

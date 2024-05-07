@@ -1,11 +1,9 @@
 @extends('layouts.admin')
-@section('title', 'Informacion de clientes')
-
 @section('contenido')
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
-            <h3 class="page-title">Datos del cliente</h3>
+            <h3 class="page-title">Datos del proveedor</h3>
         </div>
         <div class="row">
             <div class="col-12">
@@ -39,12 +37,15 @@
                                             <th>Id</th>
                                             <th>Nombre</th>
                                             <th>Apellidos</th>
-                                            <th>N CI</th>
+                                            <th>Rason social</th>
+                                            <th>Numero CI/NIT</th>
+                                            <th>N celular</th>
                                             <th>Correo gmail</th>
-                                            <th>N NIT</th>
-                                            <th>N celular 1</th>
-                                            <th>N celular 2</th>
-                                            <th>Ubicación</th>
+                                            <th>Direcion</th>
+                                            <th>N cuenta</th>
+                                            <th>P contacto</th>
+                                            <th>N celular</th>
+                                            <th>Observaciones</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -53,12 +54,15 @@
                                             <th scope="row">1</th>
                                             <td> juan</td>
                                             <td> garcia zuarez</td>
+                                            <td> proveedor 1</td>
+                                            <td>21345678</td>
                                             <td>21345678</td>
                                             <td>juan@gemail.com</td>
-                                            <td>34567</td>
+                                            <td>satelite norte</td>
                                             <td>21345678</td>
-                                            <td>2134354678</td>
-                                            <td>3satelite norte</td>
+                                            <td>jona asalvatierra</td>
+                                            <td>534657687</td>
+                                            <td>ninguna</td>
                                             <td style="width: 20%;">
                                                 <a class="btn btn-outline-warning" href="">
                                                     <i class="fa fa-eye" aria-hidden="true"></i></a>
@@ -79,13 +83,13 @@
             </div>
         </div>
     </div>
-    <!-- Modal EDITAR CLIENTE -->
+    <!-- Modal EDITAR PROVEEDOR -->
     <div class="modal fade" id="editarProveedorModal" tabindex="-1" role="dialog" aria-labelledby="editarProveedorModal"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editarProveedorModalTitle">Editar cliente</h5>
+                    <h5 class="modal-title" id="editarProveedorModalTitle">Editar proveedor</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><B>X</B></span>
                     </button>
@@ -95,63 +99,81 @@
                     <!-- División 1 -->
                     <div id="division1">
                         <form id="infoPersonalForm">
-                            <label for="campo1">Nombre:</label>
-                            <input type="text" id="campo1" name="campo1"><br>
+                        <label for="campo1">Nombre:</label>
+                                    <input type="text" id="campo1" name="campo1"><br>
 
-                            <label for="campo2">Apellidos:</label>
-                            <input type="text" id="campo2" name="campo2"><br>
+                                    <label for="campo2">Apellidos:</label>
+                                    <input type="text" id="campo2" name="campo2"><br>
 
-                            <label for="campo33">Numero CI:</label>
-                            <input type="text" id="campo33" name="campo33"><br>
+                                    <label for="campo4">Rason social:</label>
+                                    <input type="text" id="campo4" name="campo4"><br>
+                                  
+                                    <label for="campo3">Numero CI /NIT:</label>
+                                   <input type="text" id="campo3" name="campo3"><br>
 
-                            <label for="campo4">Correo electronico:</label>
-                            <input type="text" id="campo4" name="campo4"><br>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Numero CI
+                                        </label>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Numero NIT
+                                        </label>
+                                    </div>
+                                    <label for="campo7">Numero celular:</label>
+                                    <input type="text" id="campo7" name="campo7"><br>
 
-                            <label for="campo5">Numero NIT:</label>
-                            <input type="text" id="campo5" name="campo5"><br>
+                                    <label for="campo4">Correo electronico:</label>
+                                    <input type="text" id="campo4" name="campo4"><br>
                         </form>
                     </div>
 
                     <!-- División 2 -->
                     <div id="division2">
                         <form id="infoContactoForm">
-                            <label for="campo6">Numero celular 1:</label>
-                            <input type="text" id="campo6" name="campo6"><br>
+                        <label for="campo8">Direcion:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
 
-                            <label for="campo7">Numero celular 2:</label>
-                            <input type="text" id="campo7" name="campo7"><br>
+                                    <label for="campo8">Numero de cuenta:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
 
-                            <label for="campo8">Ubicacion domiciliario:</label>
-                            <input type="text" id="campo8" name="campo8"><br>
+                                    <label for="campo8">Persona de contacto:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
 
-                            <label for="campo9">Ingresar URL ubicacion GPS:</label>
-                            <input type="text" id="campo9" name="campo9"><br>
+                                    <label for="campo8">Numero celular:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
+
+                                    <label for="campo8">Observaciones</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
                         </form>
                     </div>
                     <div class="derecha">
                         <br>
                         <br>
                         <button onclick="qr()" class="btn btn-dark mr-2">Registrar</button>
-                        <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a> 
-                        <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu"
-                            class="btn btn-dark">MAPA <i class="fa fa-map-marker" aria-hidden="true"></i>
-                        </a>
+                        <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- fin Modal EDITAR CLIENTE-->
+    <!-- fin Modal EDITAR PROVEEDOR -->
 
 
 
-    <!-- Modal CREAR CLIENTE -->
+
+
+
+    <!-- Modal CREAR PROVEEDOR -->
     <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2"
         aria-hidden="true" style="display: none;">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel-2">Agregar cliente</h5>
+                    <h5 class="modal-title" id="exampleModalLabel-2">Informacion personal</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><B>X</B></span>
                     </button>
@@ -168,44 +190,59 @@
                                     <label for="campo2">Apellidos:</label>
                                     <input type="text" id="campo2" name="campo2"><br>
 
-                                    <label for="campo33">Numero CI:</label>
-                                    <input type="text" id="campo33" name="campo33"><br>
+                                    <label for="campo4">Rason social:</label>
+                                    <input type="text" id="campo4" name="campo4"><br>
+                                  
+                                    <label for="campo3">Numero CI /NIT:</label>
+                                   <input type="text" id="campo3" name="campo3"><br>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Numero CI
+                                        </label>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Numero NIT
+                                        </label>
+                                    </div>
+                                    <label for="campo7">Numero celular:</label>
+                                    <input type="text" id="campo7" name="campo7"><br>
 
                                     <label for="campo4">Correo electronico:</label>
                                     <input type="text" id="campo4" name="campo4"><br>
-
-                                    <label for="campo5">Numero NIT:</label>
-                                    <input type="text" id="campo5" name="campo5"><br>
                                 </form>
                             </div>
                             <!-- Segunda partición -->
                             <div class="col-lg-6">
                                 <form>
-                                    <label for="campo6">Numero celular 1:</label>
-                                    <input type="text" id="campo6" name="campo6"><br>
-
-                                    <label for="campo7">Numero celular 2:</label>
-                                    <input type="text" id="campo7" name="campo7"><br>
-
-                                    <label for="campo8">Ubicacion domiciliario:</label>
+                                   
+                                    <label for="campo8">Direcion:</label>
                                     <input type="text" id="campo8" name="campo8"><br>
 
-                                    <label for="campo9">Ingresar URL ubicacion GPS:</label>
-                                    <input type="text" id="campo9" name="campo9"><br>
+                                    <label for="campo8">Numero de cuenta:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
+
+                                    <label for="campo8">Persona de contacto:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
+
+                                    <label for="campo8">Numero celular:</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
+
+                                    <label for="campo8">Observaciones</label>
+                                    <input type="text" id="campo8" name="campo8"><br>
                                     <br>
                                     <br>
                                     <br>
                                     <div class="derecha">
-                                    <button onclick="qr()" class="btn btn-dark mr-2">Registrar</button>
-                                    <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a> 
-                                    <a href="https://www.google.com/maps/@-17.6028396,-63.1207562,4216m/data=!3m1!1e3?entry=ttu"
-                                        class="btn btn-dark">MAPA <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    </a>
+                                        <button onclick="qr()" class="btn btn-dark mr-2">Registrar</button>
+                                        <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <!-- Modal CREAR CLIENTE -->
-                    </div>
-                </div>
-                @endsection
+                        <!-- Modal CREAR PROVEEDOR -->
+                        @endsection
+

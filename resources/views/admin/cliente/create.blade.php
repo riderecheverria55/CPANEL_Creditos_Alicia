@@ -26,16 +26,14 @@
                 <label for="campo1">Nombre:</label>
                 <input type="text" id="campo1" name="nombre" type="text" required><br>
 
-<<<<<<< HEAD
+
                 <label for="campo2">Apellido</label>
                 <input type="text" id="campo2" name="apellido" type="text" required><br>
-=======
                 <label for="campo2">Apellidos</label>
                 <input type="text" id="campo2" name="apellido" required><br>
->>>>>>> 9c8c155c8e2a6fe5a2a2d5599a5e35b859d85dff
 
-                <label for="campo3">Celular :</label>
-                <input type="text" id="campo3" name="celular"  type="number" required><br>
+                <label for="campo33">Celular :</label>
+                <input type="text" id="campo33" name="celular"  type="number" required><br>
 
                 <label for="campo4">Celular 2:</label>
                 <input type="text" id="campo4" name="celular_2" type="number" ><br>

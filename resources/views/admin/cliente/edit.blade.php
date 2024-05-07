@@ -31,8 +31,8 @@
                 <label for="campo2">Apellidos</label>
                 <input type="text" id="campo2" value="{{$clientes->APELLIDO}}" name="apellido" required><br>
 
-                <label for="campo3">Celular :</label>
-                <input type="text" id="campo3" value="{{$clientes->CELULAR}}" name="celular" required><br>
+                <label for="campo33">Celular :</label>
+                <input type="text" id="campo33" value="{{$clientes->CELULAR}}" name="celular" required><br>
 
                 <label for="campo4">Celular 2:</label>
                 <input type="text" value="{{$clientes->CELULAR_2}}" id="campo4" name="celular_2"><br>
