@@ -143,3 +143,14 @@ Route::get('/sucursalP', function () {
 Route::get('/almacenP', function () {
     return view('admin.almacen.indexP');
 });
+
+/*REGISTRO DE ITENS FRONT END*/
+Route::get('/itensP', function () {
+    return view('admin.itens.indexP');
+});
+
+
+/*R CATEGORIA_SUBCATEGORIA FRONT END*/
+Route::get('/categoria_subP', function () {
+    return view('admin.categoria_sub.indexP');
+});

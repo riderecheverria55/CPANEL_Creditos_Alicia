@@ -1,6 +1,32 @@
 #campo3 {
   width: 150px; /* Modifica el tamaño según lo necesites */
 }
+
+
+.form-controld  {
+  width: 30% !important; /* Reducir el tamaño del input al 40% */
+
+}
+
+          .form-controlr  {
+  width: 45% !important; /* Reducir el tamaño del input al 40% */  
+
+}
+
+
+.dataTables_length form {
+  display: flex; /* Establecer el contenedor como flexbox */
+  align-items: center; /* Alinear los elementos verticalmente */
+}
+.modal-footer {
+          display: flex;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+      }
+  
+      .modal-footer .btn {
+          margin-left: 10px; /* Espacio entre los botones */
+      }
 /*------------------------------------------------------------------
  [Master Stylesheet]
 
