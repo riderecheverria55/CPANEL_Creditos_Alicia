@@ -10,8 +10,7 @@
       <div class="card">
         <div class="card-body">
         <div class="card">
-          <div class="card-body">
-                    <div class="table-responsive">
+          <div class="card-body">                   
                         <div id="order-listing_wrapper"
                             class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                             <div class="row">
@@ -40,11 +39,13 @@
                             <div class="col-sm-12">
                                 <div class="card-block table-border-style">
                                     <div class="table-responsive"> 
-                                      <table class="table table-hover" >
+                                      <table class="table table-bordered table-hover">
                                           <thead class="bg-primary">
                                               <th class="text-center" style="color: #fff;">ID</th>
                                               <th class="text-center" style="color: #fff;">PROVEEDOR</th>
                                               <th class="text-center" style="color: #fff;">DESCRIPCION</th>
+                                              <th class="text-center" style="color: #fff;">ALMACEN</th>
+                                              <th class="text-center" style="color: #fff;">SUCURSAL</th>
                                               <th class="text-center" style="color: #fff;">N. FACTURA</th>
                                               <th class="text-center" style="color: #fff;">FECHA</th>
                                               <th class="text-center" style="color: #fff;">ACCIONES</th>
@@ -54,6 +55,8 @@
                                                       <td class="text-center">1</td>
                                                       <td class="text-center">juan</td>
                                                       <td class="text-center">moto</td>
+                                                      <td class="text-center">almacen 1</td>
+                                                      <td class="text-center">sucrsal 2</td>
                                                       <td class="text-center">12456789</td>
                                                       <td class="text-center">12/12/2024</td>
                                                       <td style="width: 20%;">
@@ -72,6 +75,8 @@
                                                     <td class="text-center">2</td>
                                                     <td class="text-center">juan</td>
                                                     <td class="text-center">moto</td>
+                                                    <td class="text-center">almacen 1</td>
+                                                      <td class="text-center">sucrsal 2</td>
                                                     <td class="text-center">12456789</td>
                                                     <td class="text-center">12/12/2024</td>
                                                     <td style="width: 20%;">
@@ -90,6 +95,8 @@
                                                     <td class="text-center">3</td>
                                                     <td class="text-center">juan</td>
                                                     <td class="text-center">moto</td>
+                                                    <td class="text-center">almacen 1</td>
+                                                    <td class="text-center">sucrsal 2</td>
                                                     <td class="text-center">12456789</td>
                                                     <td class="text-center">12/12/2024</td>
                                                     <td style="width: 20%;">
@@ -104,11 +111,9 @@
                                                       </center>
                                                   </td>                             
                                                 </tr>
-                               
                                           </tbody>
                                       </table>
-                                    </div>
-                                  </div>
+                                    </div>     
                         </div>
                       <div class="row">
                     <div class="col-lg-12">

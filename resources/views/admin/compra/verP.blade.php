@@ -51,7 +51,9 @@
                         <label for="nombre"><b>Fecha</b><span class="required"></span></label>
 
                         <p>12/10/2024</p>
+                        <label for="nombre"><b>Sucursal</b><span class="required"></span></label>
 
+                        <p>sucrsal 1</p>
                       </div>
                     </div>
                     <div class="col-md-2">
@@ -60,12 +62,16 @@
 
                         <p>2345</p>
 
+                        <label for="nombre"><b>Almacen</b><span class="required"></span></label>
+
+                        <p>almacen 1</p>
+
                       </div>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="table-responsive">
-                      <table class="table table-hover" id="table">
+                      <table class="table table-bordered table-hover" id="table">
                         <thead class="bg-info">
                           <tr>
                             <th class="text-center" style="color: #fff; width: 20px;" scope="col">CANTIDAD</th>

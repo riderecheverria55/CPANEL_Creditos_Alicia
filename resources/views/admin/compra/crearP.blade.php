@@ -23,7 +23,7 @@
     <div class="content-wrapper">
       <div class="page-header">
       <h3 class="page-title">
-              Datos orden de compra
+              Crear orden de compra
             </h3>
       </div>
       <div class="row">
@@ -119,7 +119,7 @@
                         <br>
                         <div class="col-md-12">
                             <div class="table-responsive">
-                                <table class="table table-hover" id="table">
+                                <table class="table table-bordered table-hover" id="table">
                                     <thead class="bg-info">
                                         <tr>
                                             <th class="text-center" style="color: #fff; width: 20px;" scope="col">CANTIDAD</th>
