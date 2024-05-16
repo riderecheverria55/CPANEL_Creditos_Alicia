@@ -13,8 +13,7 @@
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
     <link rel="stylesheet" href="{{asset('plugins/sweetalert2/dist/sweetalert2.min.css')}}">
     <link href="{{asset('css/formulario_modal.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/modal_crear_proveedor.css')}}" rel="stylesheet" />
-    
+    <link href="{{asset('css/modal_crear_proveedor.css')}}" rel="stylesheet" />   
 </head>
 
 <body>
@@ -71,14 +70,14 @@
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link" href="index-2.html">
-                            <i class="fa fa-home menu-icon"></i>
+                            <i class="fa fa-home menu-icon "></i>
                             <span class="menu-title">Inicio</span>
                         </a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#ui-advanced" aria-expanded="false"
                         aria-controls="ui-advanced">
-                        <i class="fas fa-clipboard-list menu-icon"></i>
+                        <i class="fa fa-users menu-icon"></i>
                         <span class="menu-title">Gestion de Usuarios</span>
                         <i class="menu-arrow"></i>
                     </a>
@@ -99,7 +98,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
                             aria-controls="ui-basic">
-                            <i class="far fa-compass menu-icon"></i>
+                            <i class="fa fa-user menu-icon"></i>
                             <span class="menu-title">Gestion de Clientes</span>
                             <i class="menu-arrow"></i>
                         </a>
@@ -113,7 +112,7 @@
                     </li>
                     <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-              <i class="fas fa-table menu-icon"></i>
+                <i class="fa fa-truck menu-icon"></i>
               <span class="menu-title">Gestion de proveedor</span>
               <i class="menu-arrow"></i>
             </a>
@@ -124,9 +123,21 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="">
+                <i class="fas fa-shopping-cart menu-icon"></i>
+              <span class="menu-title">Gestion de compras</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('sucursales.index')}}">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Gestion de sucrsales</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="fa fa-home menu-icon"></i>
+              <span class="menu-title">Gestion de almacen</span>
             </a>
           </li>
           <li class="nav-item">
@@ -241,6 +252,8 @@
     <script src="{{asset('js/dashboard.js')}}"></script>
     <script src="{{asset('plugins/sweetalert2/dist/sweetalert2.min.js')}}"></script>
     <script src="{{asset('js/select2.js')}}"></script>
+    <script src="{{asset('js/file-upload.js')}}"></script>
+    <script src="{{asset('js/typeahead.js')}}"></script>
     @yield('script')
 </body>
 

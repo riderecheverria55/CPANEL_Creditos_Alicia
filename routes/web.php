@@ -165,3 +165,19 @@ Route::get('/itensP', function () {
 Route::get('/categoria_subP', function () {
     return view('admin.categoria_sub.indexP');
 });
+
+
+/*COMPRA FRONT END*/
+Route::get('/compraP', function () {
+    return view('admin.compra.indexP');
+});
+
+/*COMPRA CREAR FRONT END*/
+Route::get('/compraP_crearP', function () {
+    return view('admin.compra.crearP');
+});
+
+/*COMPRA ver FRONT END*/
+Route::get('/compraP_verP', function () {
+    return view('admin.compra.verP');
+});
