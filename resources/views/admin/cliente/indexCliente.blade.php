@@ -26,8 +26,7 @@
                                                         <input class="form-control" id="buscar" name="buscar" type="text" onkeypress="return soloLetras(event)" placeholder="Buscar por nombre....."/>
                                                             
                                                             <button type="submit" class="btn btn-dark">
-                                                                    <span class="" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-                                                                    
+                                                                    <span class="" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>                                                                   
                                                             </button>
                                                             <a onclick="window.location.href='{{ route('clientes.index') }}'" class="btn btn-dark">
                                                                     <i class="fas fa-undo-alt"></i>
@@ -41,7 +40,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <table id="products_listing" class="table order-table ">

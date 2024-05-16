@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SucursalController;
+use App\Http\Controllers\ItemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +38,16 @@ Route::get('sucursales',[SucursalController::class, 'index'])->name('sucursales.
 Route::post('sucursales/store',[SucursalController::class, 'store'])->name('sucursales.store');
 Route::delete('sucursales/destroy/{id}',[SucursalController::class, 'destroy'])->name('sucursales.destroy');
 Route::put('sucursales/update/{id}',[SucursalController::class, 'update'])->name('sucursales.update');
+
+// Items
+
+Route::get('items',[ItemController::class, 'index'])->name('items.index');
+Route::get('items/{id}/show',[ItemController::class, 'show'])->name('items.show');
+Route::get('items/create',[ItemController::class, 'create'])->name('items.create');
+Route::post('items/store',[ItemController::class, 'store'])->name('items.store');
+Route::delete('items/destroy/{id}',[ItemController::class, 'destroy'])->name('items.destroy');
+Route::get('items/{id}/edit',[ItemController::class, 'edit'])->name('items.edit');
+Route::put('items/update/{id}',[ItemController::class, 'update'])->name('items.update');
 
 
 

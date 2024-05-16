@@ -130,7 +130,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="{{route('sucursales.index')}}" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link" href="{{route('items.index')}}">
+              <i class="fa fa-home menu-icon"></i>
+              <span class="menu-title">Items</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse"  aria-expanded="false" aria-controls="auth">
               <i class="fas fa-window-restore menu-icon"></i>
               <span class="menu-title">Inventario</span>
               <i class="menu-arrow"></i>
