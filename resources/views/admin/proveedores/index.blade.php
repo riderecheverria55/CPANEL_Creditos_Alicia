@@ -13,28 +13,62 @@
                 <div class="modal-body">
                     <div id="partition1" class="container">
                         <div class="row">
+                          <div class="col-lg-6"> 
                             <form action="{{url('proveedores/store')}}" method="POST">
                                 @csrf
-                                <div class="col-lg-6"> 
+
                                     <label for="campo1">Nombre:</label>
                                     <input type="text" id="campo1" name="nombre" required><br>
+
+                                    <label for="campo2">Apellidos:</label>
+                                    <input type="text" id="campo2" name="campo2"><br>
+
+                                    <label for="campo4">Rason social:</label>
+                                    <input type="text" id="campo4" name="campo4"><br>
+                                  
+                                    <label for="campo3">Numero CI /NIT:</label>
+                                    <input type="text" id="campo3" name="nit"><br>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Numero CI
+                                        </label>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                            id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Numero NIT
+                                        </label>
+                                    </div>
                                     <label for="campo2">Celular:</label>
-                                    <input type="number" id="campo2" name="celular" required><br>
-                                    <label for="campo3">Celular:</label>
-                                    <input type="number" id="campo3" name="celular_2"><br>
-                                    <label for="campo4">Correo :</label>
+                                    <input type="text" id="campo2" name="celular" required><br>
+
+                                    <label for="campo4">Correo electronico:</label>
                                     <input type="text" id="campo4" name="correo"><br>
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="campo5">Numero NIT:</label>
-                                    <input type="text" id="campo5" name="nit"><br>
                                     <label for="campo7">Direccion:</label>
                                     <input type="text" id="campo7" name="direccion"><br>
-                                    <br>
-                                    <div class="derecha">
+
+                                  <label for="campo8">Numero de cuenta:</label>
+                                  <input type="text" id="campo8" name="campo8"><br>
+
+                                  <label for="campo33">Pesona de contacto::</label>
+                                  <input type="text" id="campo33" name="celular_2"><br>
+
+                                  <label for="campo8">Numero celular:</label>
+                                  <input type="text" id="campo8" name="campo8"><br>
+
+                                  <label for="campo8">Observaciones</label>
+                                  <input type="text" id="campo8" name="campo8"><br>
+                                  <br>
+                                  <br>
+                                  <br>
+                                  <div class="derecha">
                                     <button  type="submit" class="btn btn-dark mr-2">Registrar</button>
-                                    <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>  
-                                    </div>
+                                    <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a> 
+                                  </div>
                                 </div>
                             </form> 
                         </div>
@@ -43,54 +77,61 @@
             </div>
         </div>
     </div>
+
+
+    
     <input type="hidden" id="ruta" value="{{url('/')}}">
         <!-- Modal CREAR PROVEEDOR -->
+        <div class="main-panel">          
+          <div class="content-wrapper">
+            <div class="page-header">
+              <h3 class="page-title">Datos del proveedor</h3>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="card">
+                      <div class="card-body">
+               
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="full">
-            <div class="page-header card">
-              <div class="card-block">
-                @if (session('status'))
-                    <div class="alert alert-success">{{session('status') }}</div>
-                @endif
-                <div class="card-body">
-                  <form action="{{route('proveedores.index')}}" method="GET" class="form_date" id="formulario">
-                    <div class="row">
-                      <div class="input-group col-4">
-                          <input class="form-control" id="buscar" name="buscar" type="text"  onkeypress="return soloLetras(event)" placeholder="Buscar por nombre,apellido....."/>
-                          <div class="input-group-prepend">
-                            <button type="submit">
-                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-                            </button>
+                        <div class="row">
+                          <div class="col-sm-12">
+                              <div class="dataTables_length" id="order-listing_length">
+                                  <form class="form-inline">
+                                      <div>
+                                         
+                                              <input class="form-control" id="buscar" name="buscar" type="text"  onkeypress="return soloLetras(event)" placeholder="Buscar por nombre,apellido....."/>
+                                          <a href="" class="btn btn-dark"
+                                          lass="input-group-text" id="basic-addon1">
+                                          <i class="fa fa-search" aria-hidden="true"></i>
+                                          </a>
+                                          <a href="" type="button" class="btn btn-dark" onclick="window.location.href='{{ route('proveedores.index') }}'">
+                                            <i class="fas fa-undo-alt"></i>
+                                        </a>
+                                          <button type="button" class="btn btn-primary btn-sm"
+                                              data-toggle="modal" data-target="#exampleModal-2"
+                                              fdprocessedid="4otim4"><i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> <b> Agregar nuevo</b><i></i></button>
+                                      </div>
+                              </div>
                           </div>
-                          <button type="button" style="float: right; color: white; font-weight: bold;margin-left: 5px;padding-left: 16px;
-                              padding-right: 16px; " class="btn btn-success"
-                              onclick="window.location.href='{{ route('proveedores.index') }}'">
-                              <i class="fa fa-refresh" aria-hidden="true"></i>
-                          </button>
                       </div>
-                      <div class="form-group col-8">      
-                        <button type="button" style="float: right; color: white; font-weight: bold;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-2">
-                          Registrar Proveedor  <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-
+                    
+                 <br>
                   <div class="card-block table-border-style">
                     <div class="table-responsive">
-                      <table class="table table-bordered table-striped table-hover" id="table">
+                      <table class="table table-bordered table-hover" id="table">
                         <thead class="bg-primary">
                             <tr>
-                                <th class="text-center" scope="col">ID</th>
-                                <th class="text-center" scope="col">NOMBRE</th>
-                                <th class="text-center" scope="col">CELULAR</th>
-                                <th class="text-center" scope="col">TELEFONO</th>
-                                <th class="text-center" scope="col">COREEO</th>
-                                <th class="text-center" scope="col">DIRECCION</th>
-                                <th class="text-center" scope="col">NIT</th>
-                                <th class="text-center" scope="col">ACCIONES</th>
+                                <th  class="text-center" style="color: #fff;">ID</th>
+                                <th  class="text-center" style="color: #fff;">NOMBRE</th>
+                                <th  class="text-center" style="color: #fff;">APELLIDOS</th>
+                                <th  class="text-center" style="color: #fff;">CI/NIT</th>
+                                <th  class="text-center" style="color: #fff;">DIRECCION</th>
+                                <th  class="text-center" style="color: #fff;">P CONTACTO</th>
+                                <th  class="text-center" style="color: #fff;">N CELULAR</th>
+                                <th  class="text-center" style="color: #fff;">OBSERVACUONES</th>
+                                <th  class="text-center" style="color: #fff;">ACCIONES</th>
                             </tr>
                         </thead>
                         <tbody id="data_persona">
@@ -100,20 +141,22 @@
                               <td  class="text-center" scope="row"><?php echo $contador;?></td>
                          
                               <td class="text-center">{{$item->NOMBRE}}</td>
-                              <td class="text-center">{{$item->CELULAR}}</td>
-                              <td class="text-center">{{$item->CELULAR_2}}</td>
-                              <td class="text-center">{{$item->CORREO}}</td>
-                              <td class="text-center">{{$item->DIRECCION}}</td>
+                              <td class="text-center"></td>
+
                               <td class="text-center">{{$item->NIT}}</td>
+                              <td class="text-center">{{$item->DIRECCION}}</td>
+                              <td class="text-center"></td>
+                              <td class="text-center">{{$item->CELULAR_2}}</td>
+                              <td class="text-center"></td>
+                              
                               <td class="text-center">     
                                 <center>
-                                  <button type="button" " class="btn btn-warning btn-sm mx-2" data-toggle="modal"
-                                  data-target="#editarProveedorModal{{$item->COD_PROVEEDOR}}"><i class="fa fa-pencil" aria-hidden="true"></i>
-                                  </button>
-                                  <button class="btn btn-danger btn-sm mx-2 eliminarProveedor" action="{{ url('proveedores/destroy',$item->COD_PROVEEDOR) }}"
-                                    method="DELETE" token="{{ csrf_token() }}" pagina="proveedores">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                  </button>
+                                <a class="btn btn-outline-info" href="#" title="Editar"
+                                data-toggle="modal"   data-target="#editarProveedorModal{{$item->COD_PROVEEDOR}}">
+                                    <i class="far fa-edit"></i></a>
+
+                                <a href="#" class="btn btn-outline-danger eliminarProveedor" action="{{ url('proveedores/destroy',$item->COD_PROVEEDOR) }}"
+                                  method="DELETE" token="{{ csrf_token() }}" pagina="proveedores"><i class="far fa-trash-alt"></i></a>
                                 </center>
                               </td>
                             </tr>
@@ -129,35 +172,68 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form id="infoPersonalForm" action="{{ url('proveedores/update', $item->COD_PROVEEDOR) }}" method="POST">
-                                                    @method('PUT')
-                                                    @csrf
-                                                    <div id="division1">
-                                                        <label for="campo1">Nombre:</label>
-                                                        <input type="text" id="campo1" value="{{$item->NOMBRE}}" name="nombre" required><br>
-                                                        <label for="campo2">Celular:</label>
-                                                        <input type="number" id="campo2" value="{{$item->CELULAR}}" name="celular" required><br>
-                                                        <label for="campo3">Celular:</label>
-                                                        <input type="number" id="campo3" value="{{$item->CELULAR_2}}" name="celular_2"><br>
-                                                        <label for="campo4">Correo :</label>
-                                                        <input type="text" id="campo4" value="{{$item->CORREO}}" name="correo"><br>
-                                                    </div>
-                                                    <div id="division2">
-                                                            <label for="campo5">Numero NIT:</label>
-                                                            <input type="text" id="campo5" value="{{$item->NIT}}"  name="nit"><br>
-                                                            <label for="campo7">Direccion:</label>
-                                                            <input type="text" id="campo7" value="{{$item->DIRECCION}}"  name="direccion"><br>
-                                                    </div>
-                                                    <div class="derecha">
-                                                    <br>
-                                                    <br>
-                                                        <button  type="submit" id="submitBtn" class="btn btn-dark mr-2">Registrar</button>
-                                                        <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>  
-                                                    </div>
-                                                
-                                            </div>
-                                        </form>
-                                        </div>
+                                              <div id="partition1" class="container">
+                                                  <div class="row">
+                                                    <div class="col-lg-6"> 
+                                                      <form action="{{ url('proveedores/update', $item->COD_PROVEEDOR) }}" method="POST">
+                                                        @method('PUT')
+                                                            @csrf
+                          
+                                                              <label for="campo1">Nombre:</label>
+                                                              <input type="text" value="{{$item->NOMBRE}}" id="campo1" name="nombre" required><br>
+                          
+                                                              <label for="campo2">Apellidos:</label>
+                                                              <input type="text" id="campo2" name="campo2"><br>
+                          
+                                                              <label for="campo4">Rason social:</label>
+                                                              <input type="text" id="campo4" name="campo4"><br>
+                                                            
+                                                              <label for="campo3">Numero CI /NIT:</label>
+                                                              <input type="text" id="campo3" value="{{$item->NIT}}" name="nit"><br>
+                          
+                                                              <div class="form-check">
+                                                                  <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                                      id="flexRadioDefault1">
+                                                                  <label class="form-check-label" for="flexRadioDefault1">
+                                                                      Numero CI
+                                                                  </label>
+                                                                  <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                                      id="flexRadioDefault2" checked>
+                                                                  <label class="form-check-label" for="flexRadioDefault2">
+                                                                      Numero NIT
+                                                                  </label>
+                                                              </div>
+                                                              <label for="campo2">Celular:</label>
+                                                              <input type="text" value="{{$item->CELULAR}}" id="campo2" name="celular" required><br>
+                          
+                                                              <label for="campo4">Correo electronico:</label>
+                                                              <input type="text" id="campo4" value="{{$item->CORREO}}" name="correo"><br>
+                                                          </div>
+                                                          <div class="col-lg-6">
+                                                              <label for="campo7">Direccion:</label>
+                                                              <input type="text" id="campo7" value="{{$item->DIRECCION}}" name="direccion"><br>
+                          
+                                                            <label for="campo8">Numero de cuenta:</label>
+                                                            <input type="text" id="campo8" name="campo8"><br>
+                          
+                                                            <label for="campo33">Pesona de contacto::</label>
+                                                            <input type="text" id="campo33"  name="celular_2"><br>
+                          
+                                                            <label for="campo88">Numero celular:</label>
+                                                            <input type="text" id="campo88" value="{{$item->CELULAR_2}}" name="celular_2"><br>
+                          
+                                                            <label for="campo8">Observaciones</label>
+                                                            <input type="text" id="campo8" name="campo8"><br>
+                                                            <br>
+                                                            <br>
+                                                            <br>
+                                                            <div class="derecha">
+                                                              <button  type="submit" id="submitBtn" class="btn btn-dark mr-2">Actualizar</button>
+                                                               <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>  
+                                                            </div>
+                                                          </div>
+                                                      </form> 
+                                                  </div>
                                     </div>
                                 </div>
                                 <!-- fin Modal EDITAR PROVEEDOR -->
@@ -168,8 +244,9 @@
                       </table>
                       <br>
                       {{-- {{ $personas->links() }} --}}
+                      <div class="row">  
+                        <div class="col-lg-12">
                     </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -178,179 +255,6 @@
       </div>
     </div>         
   </section>
-    {{-- <!-- Modal CREAR PROVEEDOR -->
-    <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2"aria-hidden="true" style="display: none;">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel-2">Informacion personal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true"><B>X</B></span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="partition1" class="container">
-                        <div class="row">
-                            <form action="{{url('proveedores/store')}}" method="POST">
-                                @csrf
-                                <div class="col-lg-6"> 
-                                    <label for="campo1">Nombre:</label>
-                                    <input type="text" id="campo1" name="nombre" required><br>
-                                    <label for="campo2">Celular:</label>
-                                    <input type="number" id="campo2" name="celular" required><br>
-                                    <label for="campo3">Celular:</label>
-                                    <input type="number" id="campo3" name="celular_2"><br>
-                                    <label for="campo4">Correo :</label>
-                                    <input type="text" id="campo4" name="correo"><br>
-                                </div>
-                                <div class="col-lg-6">
-                                    <label for="campo5">Numero NIT:</label>
-                                    <input type="text" id="campo5" name="nit"><br>
-                                    <label for="campo7">Direccion:</label>
-                                    <input type="text" id="campo7" name="direccion"><br>
-                                    <br>
-                                    <div class="derecha">
-                                    <button  type="submit" class="btn btn-dark mr-2">Registrar</button>
-                                    <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>  
-                                    </div>
-                                </div>
-                            </form> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <input type="hidden" id="ruta" value="{{url('/')}}">
-        <!-- Modal CREAR PROVEEDOR -->
-
-
-
-
-
-
-<div class="main-panel">
-    <div class="content-wrapper">
-        <div class="page-header">
-            <h3 class="page-title">Datos del proveedor</h3>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <div id="order-listing_wrapper"
-                                class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="dataTables_length" id="order-listing_length">
-                                            <form class="form-inline">
-                                                <div>
-                                                    <input class="form-control mr-sm-2 light-table-filter"
-                                                        data-table="order-table" type="text"
-                                                        placeholder="Busqueda por nombre"
-                                                        onkeypress="return soloLetras(event)">
-                                                    <a href="" class="btn btn-dark">
-                                                        <i class="fas fa-undo-alt"></i>
-                                                    </a>
-                                                    <button type="button" class="btn btn-primary btn-sm"
-                                                        data-toggle="modal" data-target="#exampleModal-2"
-                                                        fdprocessedid="4otim4">+ Agregar nuevo<i></i></button>
-                                                </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <table id="products_listing" class="table order-table">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-center" scope="col">ID</th>
-                                            <th class="text-center" scope="col">NOMBRE</th>
-                                            <th class="text-center" scope="col">CELULAR</th>
-                                            <th class="text-center" scope="col">TELEFONO</th>
-                                            <th class="text-center" scope="col">COREEO</th>
-                                            <th class="text-center" scope="col">DIRECCION</th>
-                                            <th class="text-center" scope="col">NIT</th>
-                                            <th class="text-center" scope="col">ACCIONES</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      
-                                        @foreach ($proveedores as $item)
-                                        <tr>
-                                            <td  class="text-center" scope="row"></td>
-                                            <td class="text-center">{{$item->NOMBRE}}</td>
-                                            <td class="text-center">{{$item->CELULAR}}</td>
-                                            <td class="text-center">{{$item->CELULAR_2}}</td>
-                                            <td class="text-center">{{$item->CORREO}}</td>
-                                            <td class="text-center">{{$item->DIRECCION}}</td>
-                                            <td class="text-center">{{$item->COD_PROVEEDOR}}</td>
-                                            <td style="width: 20%;">
-                                                <button class="btn btn-outline-info" type="button" data-toggle="modal" 
-                                                    data-target="#editarProveedorModal{{$item->COD_PROVEEDOR}}">
-                                                     <i class="far fa-edit"></i>
-                                                </button>
-
-                                                <a href="#" class="btn btn-outline-danger" data-toggle="modal"
-                                                    data-target=""><i class="far fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        <!-- Modal EDITAR PROVEEDOR -->
-                                        <div class="modal fade" id="editarProveedorModal{{$item->COD_PROVEEDOR}}" tabindex="-1" role="dialog" aria-labelledby="editarProveedorModal" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="editarProveedorModalTitle">Editar proveedor</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true"><B>X</B></span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <form id="infoPersonalForm" action="{{ url('proveedores/update', $item->COD_PROVEEDOR) }}" method="POST">
-                                                            @method('PUT')
-                                                            @csrf
-                                                            <div id="division1">
-                                                                <label for="campo1">Nombre:</label>
-                                                                <input type="text" id="campo1" value="{{$item->NOMBRE}}" name="nombre" required><br>
-                                                                <label for="campo2">Celular:</label>
-                                                                <input type="number" id="campo2" value="{{$item->CELULAR}}" name="celular" required><br>
-                                                                <label for="campo3">Celular:</label>
-                                                                <input type="number" id="campo3" value="{{$item->CELULAR_2}}" name="celular_2"><br>
-                                                                <label for="campo4">Correo :</label>
-                                                                <input type="text" id="campo4" value="{{$item->CORREO}}" name="correo"><br>
-                                                            </div>
-                                                            <div id="division2">
-                                                                    <label for="campo5">Numero NIT:</label>
-                                                                    <input type="text" id="campo5" value="{{$item->NIT}}"  name="nit"><br>
-                                                                    <label for="campo7">Direccion:</label>
-                                                                    <input type="text" id="campo7" value="{{$item->DIRECCION}}"  name="direccion"><br>
-                                                            </div>
-                                                            <div class="derecha">
-                                                            <br>
-                                                            <br>
-                                                                <button  type="submit" id="submitBtn" class="btn btn-dark mr-2">Registrar</button>
-                                                                <a href="#" class="btn btn-dark" data-dismiss="modal">Cancelar</a>  
-                                                            </div>
-                                                        
-                                                    </div>
-                                                </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- fin Modal EDITAR PROVEEDOR -->
-                                      
-                                        @endforeach 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-     --}}
 
 
 
@@ -471,3 +375,5 @@
     });
   </script>
 @endsection
+
+
