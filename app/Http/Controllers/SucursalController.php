@@ -47,7 +47,6 @@ class SucursalController extends Controller
     public function update(Request $request, $id)
     {
         $sucursal = Sucursal::findOrFail($id);
-       
         $sucursal->NOMBRE_SURCUSAL = strtoupper($request->input('nombre'));
         $sucursal->DIRECCION = strtoupper( $request->input('direccion'));
         $sucursal->EMPLEADO_COD =  $request->input('cod_empleado');

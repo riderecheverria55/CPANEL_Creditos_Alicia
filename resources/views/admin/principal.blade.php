@@ -11,6 +11,7 @@
     <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link rel="shortcut icon" href="http://www.urbanui.com/" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{asset('plugins/sweetalert2/dist/sweetalert2.min.css')}}">
     <link href="{{asset('css/formulario_modal.css')}}" rel="stylesheet" />
     <link href="{{asset('css/modal_crear_proveedor.css')}}" rel="stylesheet" />   
@@ -123,7 +124,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('ordeDeCompra.index')}}">
                 <i class="fas fa-shopping-cart menu-icon"></i>
               <span class="menu-title">Gestion de compras</span>
             </a>
@@ -252,8 +253,28 @@
     <script src="{{asset('js/dashboard.js')}}"></script>
     <script src="{{asset('plugins/sweetalert2/dist/sweetalert2.min.js')}}"></script>
     <script src="{{asset('js/select2.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <script src="{{asset('js/file-upload.js')}}"></script>
     <script src="{{asset('js/typeahead.js')}}"></script>
+    <script>
+        function soloNumeros(e) {
+            var key = e.keyCode || e.which,
+                tecla = String.fromCharCode(key),
+                numeros = "0123456789",
+                especiales = [8, 37, 39, 46],
+                tecla_especial = false;
+                for (var i in especiales) {
+                    if (key == especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                    }
+                }
+                if (numeros.indexOf(tecla) == -1 && !tecla_especial) {
+                    return false;
+                }
+            }
+    </script>
     @yield('script')
 </body>
 

@@ -5,6 +5,8 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrdenCompra;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,7 +51,14 @@ Route::delete('items/destroy/{id}',[ItemController::class, 'destroy'])->name('it
 Route::get('items/{id}/edit',[ItemController::class, 'edit'])->name('items.edit');
 Route::put('items/update/{id}',[ItemController::class, 'update'])->name('items.update');
 
-
+// Orden de Compra
+Route::get('ordeDeCompra',[OrdenCompra::class, 'index'])->name('ordeDeCompra.index');
+Route::get('ordeDeCompra/{id}/show',[OrdenCompra::class, 'show'])->name('ordeDeCompra.show');
+Route::get('ordeDeCompra/create',[OrdenCompra::class, 'create'])->name('ordeDeCompra.create');
+Route::post('ordeDeCompra/store',[OrdenCompra::class, 'store'])->name('ordeDeCompra.store');
+Route::delete('ordeDeCompra/destroy/{id}',[OrdenCompra::class, 'destroy'])->name('ordeDeCompra.destroy');
+Route::get('ordeDeCompra/{id}/edit',[OrdenCompra::class, 'edit'])->name('ordeDeCompra.edit');
+Route::put('ordeDeCompra/update/{id}',[OrdenCompra::class, 'update'])->name('ordeDeCompra.update');
 
 
 Route::get('/', function () {
