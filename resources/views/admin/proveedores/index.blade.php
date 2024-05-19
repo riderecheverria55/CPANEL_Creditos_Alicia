@@ -20,27 +20,15 @@
                                     <label for="campo1">Nombre:</label>
                                     <input type="text" id="campo1" name="nombre" required><br>
 
-                                    <label for="campo2">Apellidos:</label>
-                                    <input type="text" id="campo2" name="campo2"><br>
+                                    
 
                                     <label for="campo4">Rason social:</label>
                                     <input type="text" id="campo4" name="campo4"><br>
                                   
-                                    <label for="campo3">Numero CI /NIT:</label>
-                                    <input type="text" id="campo3" name="nit"><br>
+                                    <label for="campo33">Numero NIT:</label>
+                                    <input type="text" id="campo33" name="nit"><br>
 
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Numero CI
-                                        </label>
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault2" checked>
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Numero NIT
-                                        </label>
-                                    </div>
+                                
                                     <label for="campo2">Celular:</label>
                                     <input type="text" id="campo2" name="celular" required><br>
 
@@ -93,7 +81,6 @@
                   <div class="card-body">
                     <div class="card">
                       <div class="card-body">
-               
 
                         <div class="row">
                           <div class="col-sm-12">
@@ -125,12 +112,12 @@
                             <tr>
                                 <th  class="text-center" style="color: #fff;">ID</th>
                                 <th  class="text-center" style="color: #fff;">NOMBRE</th>
-                                <th  class="text-center" style="color: #fff;">APELLIDOS</th>
-                                <th  class="text-center" style="color: #fff;">CI/NIT</th>
+                             
+                                <th  class="text-center" style="color: #fff;">NIT</th>
                                 <th  class="text-center" style="color: #fff;">DIRECCION</th>
-                                <th  class="text-center" style="color: #fff;">P CONTACTO</th>
+                               
                                 <th  class="text-center" style="color: #fff;">N CELULAR</th>
-                                <th  class="text-center" style="color: #fff;">OBSERVACUONES</th>
+                              
                                 <th  class="text-center" style="color: #fff;">ACCIONES</th>
                             </tr>
                         </thead>
@@ -141,13 +128,13 @@
                               <td  class="text-center" scope="row"><?php echo $contador;?></td>
                          
                               <td class="text-center">{{$item->NOMBRE}}</td>
-                              <td class="text-center"></td>
+                             
 
                               <td class="text-center">{{$item->NIT}}</td>
                               <td class="text-center">{{$item->DIRECCION}}</td>
-                              <td class="text-center"></td>
+                             
                               <td class="text-center">{{$item->CELULAR_2}}</td>
-                              <td class="text-center"></td>
+                              
                               
                               <td class="text-center">     
                                 <center>
@@ -182,27 +169,15 @@
                                                               <label for="campo1">Nombre:</label>
                                                               <input type="text" value="{{$item->NOMBRE}}" id="campo1" name="nombre" required><br>
                           
-                                                              <label for="campo2">Apellidos:</label>
-                                                              <input type="text" id="campo2" name="campo2"><br>
+                                                             
                           
                                                               <label for="campo4">Rason social:</label>
                                                               <input type="text" id="campo4" name="campo4"><br>
                                                             
-                                                              <label for="campo3">Numero CI /NIT:</label>
-                                                              <input type="text" id="campo3" value="{{$item->NIT}}" name="nit"><br>
+                                                              <label for="campo33">Numero NIT:</label>
+                                                              <input type="text" id="campo33" value="{{$item->NIT}}" name="nit"><br>
                           
-                                                              <div class="form-check">
-                                                                  <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                                      id="flexRadioDefault1">
-                                                                  <label class="form-check-label" for="flexRadioDefault1">
-                                                                      Numero CI
-                                                                  </label>
-                                                                  <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                                      id="flexRadioDefault2" checked>
-                                                                  <label class="form-check-label" for="flexRadioDefault2">
-                                                                      Numero NIT
-                                                                  </label>
-                                                              </div>
+                                                              
                                                               <label for="campo2">Celular:</label>
                                                               <input type="text" value="{{$item->CELULAR}}" id="campo2" name="celular" required><br>
                           
@@ -238,23 +213,18 @@
                                 </div>
                                 <!-- fin Modal EDITAR PROVEEDOR -->
                                 {{-- fin modal editar --}}
-                            <?php  $contador++;?>
-                          @endforeach 
-                        </tbody>
-                      </table>
-                      <br>
-                      {{-- {{ $personas->links() }} --}}
-                      <div class="row">  
-                        <div class="col-lg-12">
+                                <?php  $contador++;?>
+                                @endforeach
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>         
-  </section>
+        
 
 
 

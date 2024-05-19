@@ -96,7 +96,7 @@
                             <th class="text-center" scope="col"></th>
                             <th class="text-center" scope="col"></th>
                             <th class="text-center" scope="col">
-                              <h5 style="color: black" id="total"> 12000/Bs</h5> <input type="hidden" name="tota_pedido"
+                              <h5 style="color: black" id="total"><?php echo $total ?> Bs</h5> <input type="hidden" name="tota_pedido"
                                 id="total_pedido">
                             </th>
                           </tfoot>

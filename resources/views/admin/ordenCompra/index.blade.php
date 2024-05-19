@@ -19,15 +19,17 @@
                                     <div class="dataTables_length" id="order-listing_length">
                                         <form class="form-inline">
                                             <div>
-                                                <input class="form-control mr-sm-2 light-table-filter"
-                                                    data-table="order-table" type="text"
-                                                    placeholder="Busqueda por nombre"
-                                                    onkeypress="return soloLetras(event)">
-                                                <a href="" class="btn btn-dark">
-                                                    <i class="fas fa-undo-alt"></i>
-                                                </a>
+                                               
+                          <input class="form-control" id="buscar" name="buscar" type="text"
+                          onkeypress="return soloLetras(event)" placeholder="Buscar por nombre,apellido....." />
+                        <a href="" class="btn btn-dark" lass="input-group-text" id="basic-addon1">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                        <a href="" type="button" class="btn btn-dark" onclick="window.location.href=''">
+                          <i class="fas fa-undo-alt"></i>
+                        </a>
                                                 <a href="{{route('ordeDeCompra.create')}}" class="btn btn-dark ">
-                                                    + Agregar nuevo
+                                                    <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> <b> Agregar nuevo</b>
                                                 </a>
                                             </div>
                                         </form>

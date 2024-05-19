@@ -8845,15 +8845,17 @@ sup {
   top: -.5em;
 }
 
+
+
 a {
-  color: #007bff;
+  color: #090909;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #0056b3;
+  color: #090909;
   text-decoration: underline;
 }
 
@@ -8935,7 +8937,7 @@ select,
 optgroup,
 textarea {
   margin: 0;
-  font-family: inherit;
+  : inherit;
   font-size: inherit;
   line-height: inherit;
 }
@@ -9046,7 +9048,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: inherit;
+  : inherit;
   font-weight: 500;
   line-height: 1.2;
   color: inherit;
@@ -18577,7 +18579,7 @@ input:focus {
   top: 0;
   height: 100%;
   width: 3px;
-  background:#0066d5;
+  background:#ffffff;
 }
 
 .sidebar .nav .nav-item.nav-profile .nav-link {

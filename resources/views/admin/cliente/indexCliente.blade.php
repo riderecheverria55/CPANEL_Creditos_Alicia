@@ -1,7 +1,7 @@
 @extends('admin.principal')
 @section('contenido')
 
-<input type="hidden" id="ruta" value="{{url('/')}}">
+
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="page-header">
@@ -14,8 +14,8 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive">
+                            
+                            <div class="card-body">                           
                                     <div id="order-listing_wrapper"
                                         class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                                         <div class="row">
@@ -32,41 +32,43 @@
                                                                     <i class="fas fa-undo-alt"></i>
                                                                 </a>
                                                             <a href="{{route('clientes.create')}}" class="btn btn-dark">
-                                                                    + Agregar nuevo
+                                                                <i class="fa fa-plus-circle fa-lg" aria-hidden="true"></i> <b> Agregar nuevo</b>
                                                                 </a>
+                                                                
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <table id="products_listing" class="table order-table ">
-                                                <thead>
+                                    <br>
+                                    <div class="card-block table-border-style">
+                                      <div class="table-responsive">
+                                        <table class="table table-bordered table-hover" id="table">
+                                          <thead class="bg-primary">
                                                     <tr>
-                                                        <th>#</th>
-                                                        <th class="text-center">NOMBRE</th>
-                                                        <th class="text-center">APELLIDOS</th>
-                                                        <th class="text-center">CELULAR</th>
-                                                        <th class="text-center">CELULAR 2</th>
-                                                        <th class="text-center">NIT</th>
-                                                        <th class="text-center">DIRECCION</th>
-                                                        <th>Acciones</th>
+                                                        <th class="text-center" style="color: #fff;">#</th>
+                                                        <th class="text-center" style="color: #fff;">NOMBRE</th>
+                                                        <th class="text-center" style="color: #fff;">APELLIDOS</th>
+                                                        <th class="text-center" style="color: #fff;">CELULAR</th>
+                                                        <th class="text-center" style="color: #fff;">CELULAR 2</th>
+                                                        <th class="text-center" style="color: #fff;">NIT</th>
+                                                        <th class="text-center" style="color: #fff;">DIRECCION</th>
+                                                        <th class="text-center" style="color: #fff;">Acciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="data_persona">
                                                     <?php $contador = 1?>
                                                     @foreach ($clientes as $item)
                                                       <tr>
-                                                        <td  class="text-center" scope="row"><?php echo $contador;?></td>
-                                                        <td>{{$item->NOMBRE}}</td>
-                                                        <td>{{$item->APELLIDO}}</td>
-                                                        <td>{{$item->CELULAR}}</td>
-                                                        <td>{{$item->CELULAR_2}}</td>
-                                                        <td>{{$item->NIT}}</td>
-                                                        <td>{{$item->DIRECCION}}</td>
-                                                        <td style="width: 20%;">
+                                                        <td   class="text-center" scope="row"><?php echo $contador;?></td>
+                                                        <td class="text-center">{{$item->NOMBRE}}</td>
+                                                        <td class="text-center">{{$item->APELLIDO}}</td>
+                                                        <td class="text-center">{{$item->CELULAR}}</td>
+                                                        <td class="text-center">{{$item->CELULAR_2}}</td>
+                                                        <td class="text-center">{{$item->NIT}}</td>
+                                                        <td class="text-center">{{$item->DIRECCION}}</td>
+                                                        <td class="text-center" style="width: 20%;">
                                                             <a class="btn btn-outline-warning"  href="{{ route('clientes.show', $item->COD_CLIENTE) }}">
                                                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                                             </a>
@@ -81,31 +83,16 @@
                                                         </td>
                                                       </tr>
                                                       <?php  $contador++;?>
-                                                    @endforeach 
-                                                  </tbody>
-                                                  {{-- <td style="width: 20%;">
-                                                    <a class="btn btn-outline-warning"  href="">
-                                                     <i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                     <a class="btn btn-outline-info" href="" title="Editar">
-                                                         <i class="far fa-edit"></i>
-                                                     </a>
-                                                     <a href="#" class="btn btn-outline-danger"
-                                                         data-toggle="modal" data-target=""><i
-                                                             class="far fa-trash-alt"></i></a>
-                                                 </td> --}}
-                                            <table>
-                                                
+                                                      @endforeach
+                                                    </tbody>
+                                                  </table>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
+                                      </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 @section('script') 
     @if (session('mensaje') == 'ok')

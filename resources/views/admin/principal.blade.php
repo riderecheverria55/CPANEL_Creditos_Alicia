@@ -135,19 +135,19 @@
               <span class="menu-title">Gestion de sucrsales</span>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a class="nav-link" href="">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Gestion de almacen</span>
             </a>
-          </li>
+          </li>--}}
           <li class="nav-item">
             <a class="nav-link" href="{{route('items.index')}}">
               <i class="fa fa-home menu-icon"></i>
-              <span class="menu-title">Items</span>
+              <span class="menu-title">Gestion de items</span>
             </a>
           </li>
-          <li class="nav-item">
+          {{--<li class="nav-item">
             <a class="nav-link" data-toggle="collapse"  aria-expanded="false" aria-controls="auth">
               <i class="fas fa-window-restore menu-icon"></i>
               <span class="menu-title">Inventario</span>
@@ -162,7 +162,7 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html">  </a></li>
               </ul>
             </div>
-          </li>
+          </li>--}}
                 </ul>
             </nav>
           <!-- partial -->

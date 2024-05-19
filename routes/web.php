@@ -190,3 +190,8 @@ Route::get('/compraP_crearP', function () {
 Route::get('/compraP_verP', function () {
     return view('admin.compra.verP');
 });
+
+/*PDF ORDEN DE COMPRA FRONT END*/
+Route::get('/compraP_pdfP', function () {
+    return view('admin.compra.pdfP');
+});
