@@ -195,3 +195,23 @@ Route::get('/compraP_verP', function () {
 Route::get('/compraP_pdfP', function () {
     return view('admin.compra.pdfP');
 });
+
+
+
+
+
+
+
+/*INGRESO FRONT END*/
+Route::get('/ingresoP', function () {
+    return view('admin.ingreso.indexP');
+});
+/*INGRESO CREAR FRONT END*/
+Route::get('/ingresoP_crearP', function () {
+    return view('admin.ingreso.crearP');
+});
+
+/*INGRESO VER FRONT END*/
+Route::get('/ingresoP_verP', function () {
+    return view('admin.ingreso.verP');
+});
