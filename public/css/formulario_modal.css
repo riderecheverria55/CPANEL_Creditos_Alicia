@@ -53,7 +53,14 @@
             border-radius: 5px;
             box-sizing: border-box;
         }
-
+        input[type="number"] {
+            width: calc(100% - 10px);
+            padding: 4px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
         input[type="submit"] {
             background-color: #007bff; /* Color de fondo del botón */
             color: white; /* Color del texto del botón */

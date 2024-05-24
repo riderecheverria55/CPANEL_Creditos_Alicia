@@ -28,10 +28,19 @@
                     </li>
                     <li>
                         <i class="fa fa-user"></i>
-                        <strong><b>Apellidos</b></strong>
+                        <strong><b>Apellidos:</b></strong>
                         <span class="text-muted">{{$clientes->APELLIDO}}</span>
                     </li>
-                   
+                    <li>
+                        <i class="fa fa-id-card"></i>
+                        <strong><b>Número de CI:</b></strong>
+                        <span class="text-muted">{{$clientes->CI}}</span>
+                    </li>
+                    <li>
+                        <i class="fa fa-id-card"></i>
+                        <strong><b>Correo:</b></strong>
+                        <span class="text-muted">{{$clientes->CORREO}}</span>
+                    </li>
                     <li>
                         <i class="fa fa-id-card"></i>
                         <strong><b>Número de NIT:</b></strong>
