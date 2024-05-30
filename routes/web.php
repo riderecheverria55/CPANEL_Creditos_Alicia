@@ -215,3 +215,8 @@ Route::get('/ingresoP_crearP', function () {
 Route::get('/ingresoP_verP', function () {
     return view('admin.ingreso.verP');
 });
+
+/*INGRESO PDF FRONT END*/
+Route::get('/ingresoP_pdfP', function () {
+    return view('admin.ingreso.pdfP');
+});
