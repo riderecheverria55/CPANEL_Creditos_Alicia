@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-md-2">
                       <div class="form-group">
-                        <label for="nombre"><b>Oserveciones</b><span class="required"></span></label>
+                        <label for="nombre"><b>Observaciones</b><span class="required"></span></label>
                         <p>ninguna</p>
                         
                       </div>

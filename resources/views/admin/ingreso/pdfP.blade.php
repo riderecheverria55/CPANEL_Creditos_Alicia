@@ -1,8 +1,7 @@
 <html lang="en">
 <head>
-  <title>Orden de compra</title>
 
-
+  <title>Comprobante de ingreso</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -16,7 +15,7 @@
 
     <div class="row header">
 
-      <h1 class="title"><b>ORDEN DE COMPRA</b></h1>
+      <h1 class="title"><b>COMPROBANTE DE INGRESO</b></h1>
     </div>
     <div class="row invoice-content">
       <div class="col-4 pl-5">
@@ -27,18 +26,21 @@
       </div>
 
       <div class="col-4 offset-4 text-right pr-5 pt-3">
-        <h4>N. Factura: <strong>#45145</strong></h4>
+        <h4>N. Ingreso: <strong>#45145</strong></h4>
         <h4>Fecha:<strong> 18/05/2024</strong></h4>
       </div>
     </div>
 
     <div class="row invoiced-details">
       <div class="col-8 invoiced-to p-5">
-        <h3><u>Datos del proveedor</u></h3>
-        <h5><i class="fa fa-building-o pr-1" aria-hidden="true"></i> POWER BOLIVIA</h5>
-        <h5><i class="fa fa-phone pr-1" aria-hidden="true"></i> (+591) 71378667</h5>
-        <h5><i class="fa fa-envelope-o pr-1" aria-hidden="true"></i> SERNAMOTOS@gmail.com</h5>
+        <h3><u>Datos de ingreso</u></h3>
+        <h5> <b>Tipo de ingreso:</b></h5>
+        <h5> Orden de compra</h5>
+        <h5> <b>Observaciones:</b></h5>
+        <h5> Ninguna</h5>
+        
       </div>
+      
       <div class="col-4 invoiced-to p-6"><br><br>
         <h3><u>N. Sucursal
           </u></h3>
@@ -56,8 +58,8 @@
             <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">PRODUCTO</th>
             <th></th>
             <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">CANTIDAD</th>
-            <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">PRECIO U.</th>
-            <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">SUBTOTAL</th>
+            <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">PRECIO COMPRA</th>
+            <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">PRECIO VENTA</th>
 
           </tr>
         </thead>
@@ -95,15 +97,7 @@
             <td class="text-center">6500 Bs</td>
             <td class="text-center">32500 Bs</td>
           </tr>
-          <tr class="total">
-            <td colspan="3" class="empty"></td>
-            <td colspan="2" class="total">
-              <h4 style="color: hwb(0 5% 95% / 0.797);"><strong>TOTAL</strong></h4>
-            </td>
-            <td class="total-value">
-              <h4 style="color: hwb(0 5% 95% / 0.797);"><strong>114000 <span class="curency">Bs.</span></strong></h4>
-            </td>
-          </tr>
+          
         </tbody>
       </table>
     </div>
@@ -120,48 +114,6 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
