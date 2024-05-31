@@ -6,6 +6,8 @@ use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\OrdenCompra;
+use App\Http\Controllers\IngresoInicialController;
+use App\Http\Controllers\IngresoOrdenCompraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,28 @@ use App\Http\Controllers\OrdenCompra;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//ingresoOrdenCompra
+Route::get('ingresoOrdenCompra',[IngresoOrdenCompraController::class, 'index'])->name('ingresoOrdenCompra.index');
+Route::get('ingresoOrdenCompra/{id}/show',[IngresoOrdenCompraController::class, 'show'])->name('ingresoOrdenCompra.show');
+Route::get('ingresoOrdenCompra/create',[IngresoOrdenCompraController::class, 'create'])->name('ingresoOrdenCompra.create');
+Route::get('ingresoOrdenCompra/datos',[IngresoOrdenCompraController::class, 'obtenerDatos'])->name('ingresoOrdenCompra.datos');
+Route::post('ingresoOrdenCompra/store',[IngresoOrdenCompraController::class, 'store'])->name('ingresoOrdenCompra.store');
+Route::delete('ingresoOrdenCompra/destroy/{id}',[IngresoOrdenCompraController::class, 'destroy'])->name('ingresoOrdenCompra.destroy');
+
+
+
+
+//ingresoInicial
+Route::get('ingresoInicial',[IngresoInicialController::class, 'index'])->name('ingresoInicial.index');
+Route::get('ingresoInicial/{id}/show',[IngresoInicialController::class, 'show'])->name('ingresoInicial.show');
+Route::get('ingresoInicial/create',[IngresoInicialController::class, 'create'])->name('ingresoInicial.create');
+Route::post('ingresoInicial/store',[IngresoInicialController::class, 'store'])->name('ingresoInicial.store');
+Route::delete('ingresoInicial/destroy/{id}',[IngresoInicialController::class, 'destroy'])->name('ingresoInicial.destroy');
+
+
+
+
 
 //clientes
 Route::get('clientes',[ClienteController::class, 'index'])->name('clientes.index');
