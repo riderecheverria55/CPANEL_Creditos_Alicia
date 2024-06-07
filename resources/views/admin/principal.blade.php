@@ -136,6 +136,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="fa fa-home menu-icon"></i>
+              <span class="menu-title">Gestion de salidas</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{{route('sucursales.index')}}">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Gestion de sucrsales</span>

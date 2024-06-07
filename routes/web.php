@@ -220,3 +220,23 @@ Route::get('/ingresoP_verP', function () {
 Route::get('/ingresoP_pdfP', function () {
     return view('admin.ingreso.pdfP');
 });
+
+
+
+
+/*SALIDA FRONT END*/
+Route::get('/salidaP', function () {
+    return view('admin.salida.indexP');
+});
+
+
+/*SALIDA CREAR FRONT END*/
+Route::get('/salidaP_crearP', function () {
+    return view('admin.salida.crearP');
+});
+
+
+/*SALIDA PDF FRONT END*/
+Route::get('/salidaP_pdfP', function () {
+    return view('admin.salida.pdfP');
+});
