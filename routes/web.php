@@ -180,3 +180,8 @@ Route::get('/ingresoP_verP', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*INGRESO PDF FRONT END*/
+Route::get('/ingresoP_pdfP', function () {
+    return view('admin.ingreso.pdfP');
+});
