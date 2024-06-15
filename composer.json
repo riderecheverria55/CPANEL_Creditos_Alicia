@@ -5,18 +5,20 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "simplesoftwareio/simple-qrcode": "^4",
-        "bacon/bacon-qr-code": "^2",
         "php": "^7.3|^8.0",
-        
-        
+        "bacon/bacon-qr-code": "^2",
+        "barryvdh/laravel-dompdf": "^2.2",
         "endroid/qr-code": "^1.1",
         "fruitcake/laravel-cors": "^2.0",
         "giauphan/laravel-qr-code": "^1.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4",
+        "laraveles/spanish": "^1.5",
+        "simplesoftwareio/simple-qrcode": "^4",
+        "spatie/laravel-permission": "^6.7"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

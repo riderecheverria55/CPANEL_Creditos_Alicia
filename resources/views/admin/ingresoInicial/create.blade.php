@@ -1,39 +1,30 @@
 @extends('admin.principal')
 @section('contenido')
 <style>
-
-    .select2-container--default .select2-selection--single .select2-selection__rendered {
-        line-height: normal !important; 
-    }
-
-    table
-    {
+    /* Estilos adicionales para hacer la tabla más legible en dispositivos móviles */
+    table {
         font-size: 14px;
     }
 
-    th, td 
-    {
+    th, td {
         padding: 8px;
     }
 
-    tfoot th
-    {
+    /* Estilos para el pie de página */
+    tfoot th {
         padding-top: 12px;
         font-weight: bold;
     }
-
-    #table th 
-    {
-        width: 20%; /* Puedes ajustar este valor según tus necesidades */
-    }
-
+    #table th {
+    width: 20%; /* Puedes ajustar este valor según tus necesidades */
+}
 </style>
-
   <div class="main-panel">          
     <div class="content-wrapper">
       <div class="page-header">
-        <h3 class="page-title"> Crear orden de compra </h3>
-        
+      <h3 class="page-title">
+              Ingreso Inicial
+            </h3>
       </div>
       <div class="row">
         <div class="col-12">
@@ -41,56 +32,43 @@
             <div class="card-body">
               <div class="card">
                 <div class="card-body">
-                    <form action="{{ route('ordeDeCompra.store') }}" method="POST" class="form-horizontal">
+                    <form action="{{ route('ingresoInicial.store') }}" method="POST" " class="form-horizontal">
                         @csrf
-                        <input type="text" name="id"  value="" hidden>
+                        <input type="text" name="id"  value="" hidden >
                         <div class="row ">
-                          <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="nombre">Proveedor<span class="required"></span></label>
-                                <select name="proveedor_id" class="form-control selectric">    
-                                    @foreach($proveedores as $item)
-                                        <option value="{{$item->COD_PROVEEDOR}}">{{$item->NOMBRE}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                          </div>
-                          <div class="col-md-3">
+                          <div class="col-md-2">
                             <label for="campo8">sucursal:</label>
-                            <select name="sucursal_id" class="form-control selectric">
+                            <select name="sucursal_id" class="form-control selectIngresoInicial">
                                 @foreach($sucursales as $item)
                                     <option value="{{$item->COD_SUCURSAL}}">{{$item->NOMBRE_SURCUSAL}}</option>
                                 @endforeach
                             </select>
-                          </div>
-                          <div class="col-md-3">
                             <div class="form-group">
+                                <br>
+                                <label for="nombre">Fecha<span class="required"></span></label>
+                                <input  type="date"   class="form-control" id="fecha" name="fecha" required>
+                            </div>
+                          </div> 
+                          <div class="col-md-2">
+                            <div class="form-group">
+                                <br>
                                 <label for="nombre">N. Factura<span class="required"></span></label>
                                 <input type="number" min="0"   class="form-control" id="factura" name="factura"   required>
                             </div>
                           </div>
-                          <div class="col-md-2">
+                          <div class="col-md-4">
                             <div class="form-group">
-                                <label for="nombre">Fecha<span class="required"></span></label>
-                                <input  type="date"   class="form-control" id="fecha" name="fecha" required>
+                                <label for="nombre">observeciones<span class="required"></span></label>
+                                <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="observeciones" name="observeciones"   required>
                             </div>
-                          </div>
+                          </div>         
                         </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="nombre">Descripcion<span class="required"></span></label>
-                                    <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="descripcion" name="descripcion"   required>
-                                </div>
-                            </div> 
-                        </div>  
                         <hr>                 
                         <div class="row ">
                           <div class="col-md-3">
                             <div class="form-group">
                                 <label for="nombre">Items<span class="required"></span></label>
-                                <select name="pedido_id" class="selectric" id="producto"> 
+                                <select name="pedido_id" class="form-control selectIngresoInicial" id="producto"> 
                                     <option value="_">Seleccione Items</option         
                                     @foreach($productos as $item)
                                         <option value="{{$item->COD_ITEM}}">{{$item->CODIGO_ITEM}}  {{$item->NOMBRE}}</option>
@@ -98,16 +76,17 @@
                                 </select>
                             </div>
                           </div>
+                         
                           <div class="col-md-2">
                             <label for="nombre">Precio compra<span class="required"></span></label>
                             <div class="form-group">
-                                <input type="number" onkeypress="return soloNumeros(event)" inputmode="numeric" class="form-control" id="precio" name="stock" required>
+                              <input type="number" onkeypress="return soloNumeros(event)" min="0" class="form-control" id="precio" name="stock"  required>
                             </div>
-                          </div>
+                          </div> 
                           <div class="col-md-2">
                             <label for="nombre">Cantidad<span class="required"></span></label>
                             <div class="form-group">
-                              <input type="number" onkeypress="return soloNumeros(event)" min="0"  class="form-control" id="cantidad"   required>
+                              <input type="number" onkeypress="return soloNumeros(event)" min="0"  class="form-control" id="cantidad"   equired>
                             </div>
                           </div>
                           <div class="col-md-3">
@@ -121,19 +100,20 @@
                         </div>
                         <br>
                         <div class="col-md-12">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover" id="table">
-                                    <thead class="bg-info">
-                                        <tr>
-                                            <th class="text-center" style="color: #fff; width: 20px;" scope="col">CANTIDAD</th>
+                          <div class="card-block table-border-style">
+                            <div class="table-responsive"> 
+                              <table class="table table-bordered table-hover" id="table_ingreso">
+                                  <thead class="bg-primary">
+                                        <tr>  
+                                          <th class="text-center" style="color: #fff;">ID</th>
                                             <th class="text-center" style="color: #fff;" scope="col">PRODUCTO</th>
-                                            <th class="text-center" style="color: #fff; width: 80px;" scope="col">PRECIO U.</th>
-                                            <th class="text-center" style="color: #fff;" scope="col">SUBTOTAL</th>
+                                            <th class="text-center" style="color: #fff; " scope="col">CANTIDAD</th>
+                                            <th class="text-center" style="color: #fff;" scope="col">PRECIO COMPRA</th>
                                             <th class="text-center" style="color: #fff;" scope="col">OPCIONES</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="data_compra">
-                                        <!-- Aquí irán los datos de la tabla Ovio si es mi codigo que copiaste -->
+                                    <tbody id="data_persona">
+                                       
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -158,15 +138,13 @@
         </div>
     </div> 
 @endsection
-
 @section('script')  
     <script>
-        $(document).ready(function(){ 
+        $(document).ready(function(){
             $("#agregar").click(function(){
                 agregarItemsCompra();
-            });
-
-            $('.selectric').select2({ 
+            }); 
+            $('.selectIngresoInicial').select2({ 
                 width: '100%',
             });    
         });
@@ -199,7 +177,7 @@
                 contador++;
                 $("#total").html("" + total + " Bs");
                 evaluar();
-                $("#table").append(fila);
+                $("#table_ingreso").append(fila);
             }
             else
             {
@@ -207,18 +185,14 @@
                     icon: 'error',
                     title: 'Ingrese una cantidad o un precio',
                     text: 'Ingresar una cantidad los campos no puede ser 0!',
-                })
-            
+                });
             }
         }
         function evaluar()
         {
-            if(total > 0)
-            {
+            if(total > 0){
                 $("#guardar").show();
-            }
-            else
-            {
+            }else{
                 $("#guardar").hide();
             }
         }

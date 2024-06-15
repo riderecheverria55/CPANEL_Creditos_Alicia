@@ -1,6 +1,6 @@
 @extends('admin.principal')
 @section('contenido')
-
+<input type="hidden" id="ruta" value="{{url('/')}}">
 {{-- Modal CREAR CLIENTE --}}
 <div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2"
   aria-hidden="true" style="display: none;">

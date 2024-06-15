@@ -48,13 +48,20 @@
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                            <img src="{{asset('imagenes/Cristian Antezana.jpeg')}}" alt="profile" />
+                            @if (Auth::user()->imagen_user)
+                                <img src="{{ url(Auth::user()->imagen_user) }}" alt="" >
+                            @else
+                                <img src="{{ url('images/user/fotoPerfil.jpeg') }}" alt="" >
+                            @endif
+                            {{-- <img src="{{asset('images/user/fotoPerfil.jpeg')}}" alt="profile" /> --}}
+                            <span style="color: white">{{ Auth::user()->name}} {{ Auth::user()->apellido}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                            <a class="dropdown-item">
-                                <i class="fas fa-cog text-primary"></i>
-                                Salir
-                            </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <a class="dropdown-item" href="{{route('login')}}" onclick="event.preventDefault();
+                                this.closest('form').submit();"> <i class="mdi mdi-logout"></i> <span class="nav-text">Salir</span> </a>      
+                            </form>
                         </div>
                     </li>
                 </ul>
@@ -88,10 +95,10 @@
                                 <a class="nav-link" href="">Usuarios</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Roles</a>
+                                <a class="nav-link" href="{{route('ingresoOrdenCompra.index')}}">Ingreso Orden Compra</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Permisos</a>
+                                <a class="nav-link" href="{{route('ingresoInicial.index')}}">Ingreso Inicial</a>
                             </li>
                         </ul>
                     </div>

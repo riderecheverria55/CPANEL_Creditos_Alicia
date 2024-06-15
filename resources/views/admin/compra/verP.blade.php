@@ -80,7 +80,6 @@
                             <th class="text-center" style="color: #fff;" scope="col">SUBTOTAL</th>
                           </tr>
                         </thead>
-
                         <tbody id="data_persona">
 
                           <tr>

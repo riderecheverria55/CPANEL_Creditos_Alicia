@@ -1,21 +1,12 @@
 <html lang="en">
 <head>
   <title>Orden de compra</title>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <script>
-    window.console = window.console || function (t) { };
-  </script>
 </head>
 <body translate="no">
   <div class="container">
     <img class="logo" height="100px" width="250px" src="imagenes/logos/logo ca.png">
 
     <div class="row header">
-
       <h1 class="title"><b>ORDEN DE COMPRA</b></h1>
     </div>
     <div class="row invoice-content">

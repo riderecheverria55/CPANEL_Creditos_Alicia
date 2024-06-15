@@ -43,12 +43,19 @@ class OrdenCompra extends Controller
     public function store(Request $request)
     {
        
+        $ultimoRegistro = OrdenCompraM::orderBy('COD_COMPRA', 'desc')->first();   
+        $ultimoId = $ultimoRegistro ? $ultimoRegistro->CODIGO_COMPRA : 0;
+        $nuevoId = $ultimoId + 1;
+        $codigoFormateado = str_pad($nuevoId, 3, '0', STR_PAD_LEFT);
+
+
         $compra = new OrdenCompraM();
         $compra->COD_PROVEEDOR = $request->input('proveedor_id');
         $compra->COD_SUCURSAL = $request->input('sucursal_id');
         $compra->NRO_FACTURA = $request->input('factura');
         $compra->DESCRIPCION = strtoupper($request->input('descripcion'));
         $compra->FECHA = $request->input('fecha');
+        $compra->CODIGO_COMPRA = $codigoFormateado;
         $compra->save();
     
         $id_producto = $request->input('idproducto');

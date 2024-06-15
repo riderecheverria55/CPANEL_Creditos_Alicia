@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -172,11 +172,14 @@ return [
         LaravelQRCode\Providers\QRCodeServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         //LaravelQRCode\Providers\QRCodeServiceProvider::class, 
         //SimpleSoftwareIO\QrCode\ServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+
     ],
 
     /*
@@ -229,6 +232,7 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'Str' => Illuminate\Support\Str::class,
         'QRCode' => LaravelQRCode\Facades\QRCode::class, 
+        'PDF' => Barryvdh\DomPDF\Facade::class,
         //'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         //'QRCode' => LaravelQRCode\Facades\QRCode::class,  
         'URL' => Illuminate\Support\Facades\URL::class,

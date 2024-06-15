@@ -20,141 +20,79 @@ use App\Http\Controllers\IngresoOrdenCompraController;
 |
 */
 
-//ingresoOrdenCompra
-Route::get('ingresoOrdenCompra',[IngresoOrdenCompraController::class, 'index'])->name('ingresoOrdenCompra.index');
-Route::get('ingresoOrdenCompra/{id}/show',[IngresoOrdenCompraController::class, 'show'])->name('ingresoOrdenCompra.show');
-Route::get('ingresoOrdenCompra/create',[IngresoOrdenCompraController::class, 'create'])->name('ingresoOrdenCompra.create');
-Route::get('ingresoOrdenCompra/datos',[IngresoOrdenCompraController::class, 'obtenerDatos'])->name('ingresoOrdenCompra.datos');
-Route::post('ingresoOrdenCompra/store',[IngresoOrdenCompraController::class, 'store'])->name('ingresoOrdenCompra.store');
-Route::delete('ingresoOrdenCompra/destroy/{id}',[IngresoOrdenCompraController::class, 'destroy'])->name('ingresoOrdenCompra.destroy');
-
-
-
-
-//ingresoInicial
-Route::get('ingresoInicial',[IngresoInicialController::class, 'index'])->name('ingresoInicial.index');
-Route::get('ingresoInicial/{id}/show',[IngresoInicialController::class, 'show'])->name('ingresoInicial.show');
-Route::get('ingresoInicial/create',[IngresoInicialController::class, 'create'])->name('ingresoInicial.create');
-Route::post('ingresoInicial/store',[IngresoInicialController::class, 'store'])->name('ingresoInicial.store');
-Route::delete('ingresoInicial/destroy/{id}',[IngresoInicialController::class, 'destroy'])->name('ingresoInicial.destroy');
-
-
-
-
-
-//clientes
-Route::get('clientes',[ClienteController::class, 'index'])->name('clientes.index');
-Route::get('clientes/{id}/show',[ClienteController::class, 'show'])->name('clientes.show');
-Route::get('clientes/create',[ClienteController::class, 'create'])->name('clientes.create');
-Route::post('clientes/store',[ClienteController::class, 'store'])->name('clientes.store');
-Route::delete('clientes/destroy/{id}',[ClienteController::class, 'destroy'])->name('clientes.destroy');
-Route::get('clientes/{id}/edit',[ClienteController::class, 'edit'])->name('clientes.edit');
-Route::put('clientes/update/{id}',[ClienteController::class, 'update'])->name('clientes.update');
-
-//proveedores
-
-Route::get('proveedores',[ProveedorController::class, 'index'])->name('proveedores.index');
-Route::post('proveedores/store',[ProveedorController::class, 'store'])->name('proveedores.store');
-Route::delete('proveedores/destroy/{id}',[ProveedorController::class, 'destroy'])->name('proveedores.destroy');
-Route::put('proveedores/update/{id}',[ProveedorController::class, 'update'])->name('proveedores.update');
-
-// Sucursales
-
-Route::get('sucursales',[SucursalController::class, 'index'])->name('sucursales.index');
-Route::post('sucursales/store',[SucursalController::class, 'store'])->name('sucursales.store');
-Route::delete('sucursales/destroy/{id}',[SucursalController::class, 'destroy'])->name('sucursales.destroy');
-Route::put('sucursales/update/{id}',[SucursalController::class, 'update'])->name('sucursales.update');
-
-// Items
-
-Route::get('items',[ItemController::class, 'index'])->name('items.index');
-Route::get('items/{id}/show',[ItemController::class, 'show'])->name('items.show');
-Route::get('items/create',[ItemController::class, 'create'])->name('items.create');
-Route::post('items/store',[ItemController::class, 'store'])->name('items.store');
-Route::delete('items/destroy/{id}',[ItemController::class, 'destroy'])->name('items.destroy');
-Route::get('items/{id}/edit',[ItemController::class, 'edit'])->name('items.edit');
-Route::put('items/update/{id}',[ItemController::class, 'update'])->name('items.update');
-
-// Orden de Compra
-Route::get('ordeDeCompra',[OrdenCompra::class, 'index'])->name('ordeDeCompra.index');
-Route::get('ordeDeCompra/{id}/show',[OrdenCompra::class, 'show'])->name('ordeDeCompra.show');
-Route::get('ordeDeCompra/create',[OrdenCompra::class, 'create'])->name('ordeDeCompra.create');
-Route::post('ordeDeCompra/store',[OrdenCompra::class, 'store'])->name('ordeDeCompra.store');
-Route::delete('ordeDeCompra/destroy/{id}',[OrdenCompra::class, 'destroy'])->name('ordeDeCompra.destroy');
-Route::get('ordeDeCompra/{id}/edit',[OrdenCompra::class, 'edit'])->name('ordeDeCompra.edit');
-Route::put('ordeDeCompra/update/{id}',[OrdenCompra::class, 'update'])->name('ordeDeCompra.update');
-
-
 Route::get('/', function () {
-    return view('admin.principal');
-});
-/*INICIO DE CECION*/
-Route::get('login', function () {
-    return view('login.login');
-});
-/*REGISTRARSE*/
-Route::get('registrar', function () {
-    return view('login.registrar');
+    // return view('admin.principal');
+     return view('auth.login');
+ });
+
+Route::group(['middleware'=> ['auth']], function(){
+
+    //ingresoOrdenCompra
+    Route::get('ingresoOrdenCompra',[IngresoOrdenCompraController::class, 'index'])->name('ingresoOrdenCompra.index');
+    Route::get('ingresoOrdenCompra/{id}/show',[IngresoOrdenCompraController::class, 'show'])->name('ingresoOrdenCompra.show');
+    Route::get('ingresoOrdenCompra/create',[IngresoOrdenCompraController::class, 'create'])->name('ingresoOrdenCompra.create');
+    Route::get('ingresoOrdenCompra/datos',[IngresoOrdenCompraController::class, 'obtenerDatos'])->name('ingresoOrdenCompra.datos');
+    Route::post('ingresoOrdenCompra/store',[IngresoOrdenCompraController::class, 'store'])->name('ingresoOrdenCompra.store');
+    Route::delete('ingresoOrdenCompra/destroy/{id}',[IngresoOrdenCompraController::class, 'destroy'])->name('ingresoOrdenCompra.destroy');
+
+    //ingresoInicial
+    Route::get('ingresoInicial',[IngresoInicialController::class, 'index'])->name('ingresoInicial.index');
+    Route::get('ingresoInicial/{id}/show',[IngresoInicialController::class, 'show'])->name('ingresoInicial.show');
+    Route::get('ingresoInicial/create',[IngresoInicialController::class, 'create'])->name('ingresoInicial.create');
+    Route::post('ingresoInicial/store',[IngresoInicialController::class, 'store'])->name('ingresoInicial.store');
+    Route::delete('ingresoInicial/destroy/{id}',[IngresoInicialController::class, 'destroy'])->name('ingresoInicial.destroy');
+    Route::get('ingresoInicial/{id}/pdf',[IngresoInicialController::class, 'pdfVer'])->name('ingresoInicial.pdf');
+
+    //clientes
+    Route::get('clientes',[ClienteController::class, 'index'])->name('clientes.index');
+    Route::get('clientes/{id}/show',[ClienteController::class, 'show'])->name('clientes.show');
+    Route::get('clientes/create',[ClienteController::class, 'create'])->name('clientes.create');
+    Route::post('clientes/store',[ClienteController::class, 'store'])->name('clientes.store');
+    Route::delete('clientes/destroy/{id}',[ClienteController::class, 'destroy'])->name('clientes.destroy');
+    Route::get('clientes/{id}/edit',[ClienteController::class, 'edit'])->name('clientes.edit');
+    Route::put('clientes/update/{id}',[ClienteController::class, 'update'])->name('clientes.update');
+
+    //proveedores
+    Route::get('proveedores',[ProveedorController::class, 'index'])->name('proveedores.index');
+    Route::post('proveedores/store',[ProveedorController::class, 'store'])->name('proveedores.store');
+    Route::delete('proveedores/destroy/{id}',[ProveedorController::class, 'destroy'])->name('proveedores.destroy');
+    Route::put('proveedores/update/{id}',[ProveedorController::class, 'update'])->name('proveedores.update');
+
+    // Sucursales
+    Route::get('sucursales',[SucursalController::class, 'index'])->name('sucursales.index');
+    Route::post('sucursales/store',[SucursalController::class, 'store'])->name('sucursales.store');
+    Route::delete('sucursales/destroy/{id}',[SucursalController::class, 'destroy'])->name('sucursales.destroy');
+    Route::put('sucursales/update/{id}',[SucursalController::class, 'update'])->name('sucursales.update');
+
+    // Items
+    Route::get('items',[ItemController::class, 'index'])->name('items.index');
+    Route::get('items/{id}/show',[ItemController::class, 'show'])->name('items.show');
+    Route::get('items/create',[ItemController::class, 'create'])->name('items.create');
+    Route::post('items/store',[ItemController::class, 'store'])->name('items.store');
+    Route::delete('items/destroy/{id}',[ItemController::class, 'destroy'])->name('items.destroy');
+    Route::get('items/{id}/edit',[ItemController::class, 'edit'])->name('items.edit');
+    Route::put('items/update/{id}',[ItemController::class, 'update'])->name('items.update');
+
+    // Orden de Compra
+    Route::get('ordeDeCompra',[OrdenCompra::class, 'index'])->name('ordeDeCompra.index');
+    Route::get('ordeDeCompra/{id}/show',[OrdenCompra::class, 'show'])->name('ordeDeCompra.show');
+    Route::get('ordeDeCompra/create',[OrdenCompra::class, 'create'])->name('ordeDeCompra.create');
+    Route::post('ordeDeCompra/store',[OrdenCompra::class, 'store'])->name('ordeDeCompra.store');
+    Route::delete('ordeDeCompra/destroy/{id}',[OrdenCompra::class, 'destroy'])->name('ordeDeCompra.destroy');
+    Route::get('ordeDeCompra/{id}/edit',[OrdenCompra::class, 'edit'])->name('ordeDeCompra.edit');
+    Route::put('ordeDeCompra/update/{id}',[OrdenCompra::class, 'update'])->name('ordeDeCompra.update');
+
 });
 
-/*USUARIOS*/
-Route::get('/usuarios', function () {
-    return view('admin.usuarios.index');
-});
-Route::get('/usuarios_crear', function () {
-    return view('admin.usuarios.crear');
-});
-Route::get('/usuarios_editar', function () {
-    return view('admin.usuarios.editar');
-});
 
 
-/*ROLES*/
-Route::get('/roles', function () {
-    return view('admin.roles.index');
-});
-Route::get('/roles_crear', function () {
-    return view('admin.roles.crear');
-});
-Route::get('/roles_editar', function () {
-    return view('admin.roles.editar');
-});
 
 
-/*PERMISOS*/
-Route::get('/permisos', function () {
-    return view('admin.permisos.index');
-});
-Route::get('/permisos_crear', function () {
-    return view('admin.permisos.crear');
-});
-Route::get('/permisos_editar', function () {
-    return view('admin.permisos.editar');
-});
 
-/*CLIENTES*/
-Route::get('/cliente', function () {
-    return view('admin.cliente.index');
-});
-Route::get('/cliente_crear', function () {
-    return view('admin.cliente.crear');
-});
-Route::get('/cliente_editar', function () {
-    return view('admin.cliente.editar');
-});
-Route::get('/cliente_ver', function () {
-    return view('admin.cliente.ver');
-});
 
-/*PROVEEDORES*/
-// Route::get('/proveedor', function () {
-//     return view('admin.proveedores.index');
-// });
 
-/*SUCRURSALES*/
-Route::get('/sucursal', function () {
-    return view('admin.sucursal.index');
-});
+
+
 
 
 
@@ -239,8 +177,6 @@ Route::get('/ingresoP_crearP', function () {
 Route::get('/ingresoP_verP', function () {
     return view('admin.ingreso.verP');
 });
+Auth::routes();
 
-/*INGRESO PDF FRONT END*/
-Route::get('/ingresoP_pdfP', function () {
-    return view('admin.ingreso.pdfP');
-});
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

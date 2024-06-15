@@ -57,21 +57,17 @@
                                             @foreach ($ordenesCompra as $item)
                                               <tr>
                                                 <td  class="text-center" scope="row"><?php echo $contador;?></td>
-                                           
                                                 <td class="text-center">{{$item->NOMBRE_PROVEEDOR}}</td>
                                                 <td class="text-center">{{$item->DESCRIPCION}}</td>
                                                 <td class="text-center">{{$item->NOMBRE_SURCUSAL}}</td>
                                                 <td class="text-center">{{$item->NRO_FACTURA }}</td>
                                                 <td class="text-center">{{$item->FECHA}}</td>
-                                               
                                                 <td style="width: 20%;">
                                                     <center>
                                                     <a class="btn btn-outline-warning" href="{{route('ordeDeCompra.show', $item->COD_COMPRA)}}">
                                                         <i class="fa fa-eye" aria-hidden="true"></i></a>
                                                     <a class="btn btn-outline-danger" href="#" title="pdf">
                                                         <i class="fa fa-file-pdf"></i></a>
-    
-                                                    
                                                     </center>
                                                 </td>  
                                               </tr>
