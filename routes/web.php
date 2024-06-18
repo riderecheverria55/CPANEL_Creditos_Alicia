@@ -240,3 +240,15 @@ Route::get('/salidaP_crearP', function () {
 Route::get('/salidaP_pdfP', function () {
     return view('admin.salida.pdfP');
 });
+
+
+/*CAJA FRONT END*/
+Route::get('/caja', function () {
+    return view('admin.caja.indexP');
+});
+
+/*CAJA PDF FRONT END*/
+Route::get('/caja_pdfP', function () {
+    return view('admin.caja.pdfP');
+});
+

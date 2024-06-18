@@ -14687,7 +14687,7 @@ button.close {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   pointer-events: auto;
   background-color: #f2f2f2;
   background-clip: padding-box;
