@@ -140,7 +140,7 @@ h1.title {
                 <p>✉ CreditosAlicia@gmail.com</p>
             </div>
             <div class="row header">
-
+              <br>
               <h1 class="title"><b>CIERRE DE CAJA</b></h1>
             </div>
             <div class="header-info">
