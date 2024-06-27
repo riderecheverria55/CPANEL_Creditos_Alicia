@@ -2,9 +2,7 @@
 <head>
 
   <title>Comprobante de salida</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+ 
   <script>
     window.console = window.console || function (t) { };
   </script>
@@ -26,8 +24,8 @@
       </div>
 
       <div class="col-4 offset-4 text-right pr-5 pt-3">
-        <h4>N. salida: <strong>#45145</strong></h4>
-        <h4>Fecha:<strong> 18/05/2024</strong></h4>
+        <h4>N. salida: <strong>{{ e($datos->first()->NUMERO_SALIDA) }}</strong></h4>
+        <h4>Fecha:<strong> {{ e($datos->first()->FECHA) }}</strong></h4>
       </div>
     </div>
 
@@ -35,11 +33,11 @@
       <div class="col-8 invoiced-to p-5">
         <h3><u>Datos de salida</u></h3>
         <h5> <b>Tipo de ingreso:</b></h5>
-        <h5> transpaso sucursal</h5>
+        <h5> {{ e($datos->first()->TIPO_SALIDA) }}</h5>
         <h5> <b> Ingreso sucursal:</b></h5>
-        <h5>Sucursal 2</h5>
+        <h5>{{ e($datos->first()->ENTRADA_SUCURSAL_NOMBRE) }}</h5>
         <h5> <b>Nota:</b></h5>
-        <h5> Ninguna</h5>
+        <h5> {{ e($datos->first()->OBSERVACION) }}</h5>
         
       </div>
       
@@ -48,9 +46,9 @@
           </u></h3>
         <h5>CASA MATRIZ CRÉDITOS ALICIA</h5>
         <h5> <b>Encargado de sucursal:</b></h5>
-        <h5> juan carlos garcia</h5>
+        <h5> {{ e($datos->first()->NOMBRE_ENCARGADO) }} {{ e($datos->first()->APELLIDO_ENCARGADO) }}</h5>
         <h5> <b>Chofer:</b></h5>
-        <h5> juan carlos garcia</h5>
+        <h5> {{ e($datos->first()->NOMBRE_CHOFER) }} {{ e($datos->first()->APELLIDO_CHOFER) }}</h5>
       </div>
     </div>
 
@@ -61,42 +59,26 @@
             <th scope="col" style="color: hwb(0 5% 95% / 0.797)   ; "  class="text-center">Nr.</th>
             <th scope="col" style="color: hwb(0 5% 95% / 0.797); width: 10%"  class="text-center">CODIGO</th>
             <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">PRODUCTO</th>
-            
             <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">CANTIDAD</th>
-            <th scope="col" style="color: hwb(0 5% 95% / 0.797);" class="text-center">PRECIO VENTA</th>
-
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td class="text-center">1</td>
-            <td class="text-center">000091</td>
-            <td class="text-center">Moto Power FOX-250/2024 color AZUL</td>
-            <td class="text-center">4</td>
-            <td class="text-center">37500 Bs</td>
-          </tr>
-          <tr>
-            <td class="text-center">2</td>
-            <td class="text-center">000091</td>
-            <td class="text-center">Moto Power CGL-200/2024 color blaco</td>
-            <td class="text-center">5</td>
-            <td class="text-center">16000 Bs</td>
-          </tr>
-          <tr>
-            <td class="text-center">3</td>
-            <td class="text-center">000091</td>
-            <td class="text-center">Moto Power LIBERTY-200 CC/2024 color AZUL</td>
-            <td class="text-center">2</td>
-            <td class="text-center">28000 Bs</td>
-          </tr>
-          <tr>
-          <tr>
-            <td class="text-center">4</td>
-            <td class="text-center">000091</td>
-            <td class="text-center">Moto Power CB1-150/2024 color negro</td>
-            <td class="text-center">4</td>        
-            <td class="text-center">32500 Bs</td>
-          </tr>
+          <?php $total = 0?>
+            <?php $items = 1?>
+            <tbody id="detalle_productos">
+              @foreach ($productos as $producto)
+            
+              <tr>
+                <td class="text-center"><?php echo $items ?> </td>
+                <td class="textright">{{$producto->NUMERO_SALIDA }}</td>
+                <td class="text-center">{{$producto->NOMBRE}}</td>
+                <td class="textcenter">{{$producto->CANTIDAD}}</td>
+                
+              </tr>
+             <?php 
+                $items++;
+             ?>
+            @endforeach 
           
         </tbody>
       </table>

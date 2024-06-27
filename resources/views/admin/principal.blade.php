@@ -138,7 +138,7 @@
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="">Apertura de caja</a></li>
+                <li class="nav-item"> <a class="nav-link"  href="{{route('cajas.index')}}">Apertura de caja</a></li>
               </ul>
             </div>
           </li>
@@ -155,7 +155,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('salida.index')}}">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Gestion de salidas</span>
             </a>

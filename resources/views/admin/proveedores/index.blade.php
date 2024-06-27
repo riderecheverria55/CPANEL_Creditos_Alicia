@@ -88,7 +88,7 @@
                                   <form class="form-inline">
                                       <div>
                                          
-                                              <input class="form-control" id="buscar" name="buscar" type="text"  onkeypress="return soloLetras(event)" placeholder="Buscar por nombre,apellido....."/>
+                                        <input class="form-control" id="buscar" name="buscar" type="text"  onkeypress="return soloLetras(event)" placeholder="Buscar por nombre,apellido....."/>
                                           <a href="" class="btn btn-dark"
                                           lass="input-group-text" id="basic-addon1">
                                           <i class="fa fa-search" aria-hidden="true"></i>

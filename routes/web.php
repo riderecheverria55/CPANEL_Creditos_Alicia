@@ -6,7 +6,9 @@ use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\OrdenCompra;
+use App\Http\Controllers\CajaControlador;
 use App\Http\Controllers\IngresoInicialController;
+use App\Http\Controllers\SalidaController;
 use App\Http\Controllers\IngresoOrdenCompraController;
 
 /*
@@ -43,6 +45,18 @@ Route::group(['middleware'=> ['auth']], function(){
     Route::delete('ingresoInicial/destroy/{id}',[IngresoInicialController::class, 'destroy'])->name('ingresoInicial.destroy');
     Route::get('ingresoInicial/{id}/pdf',[IngresoInicialController::class, 'pdfVer'])->name('ingresoInicial.pdf');
 
+    //Salida Items
+    Route::get('salida',[SalidaController::class, 'index'])->name('salida.index');
+    Route::get('salida/create',[SalidaController::class, 'create'])->name('salida.create');
+    Route::post('salida/store',[SalidaController::class, 'store'])->name('salida.store');
+    Route::delete('salida/destroy/{id}',[SalidaController::class, 'destroy'])->name('salida.destroy');
+    Route::get('salida/{id}/pdf',[SalidaController::class, 'pdfVer'])->name('salida.pdf');
+
+    //Caja
+    Route::get('cajas',[CajaControlador::class, 'index'])->name('cajas.index');
+    Route::get('caja/{id}/pdf',[CajaControlador::class, 'pdfVer'])->name('caja.pdf');
+    Route::post('cajas/cierreCaja',[CajaControlador::class, 'cierreCaja'])->name('cajas.cierreCaja');
+    Route::post('cajas/store',[CajaControlador::class, 'store'])->name('cajas.store');
     //clientes
     Route::get('clientes',[ClienteController::class, 'index'])->name('clientes.index');
     Route::get('clientes/{id}/show',[ClienteController::class, 'show'])->name('clientes.show');
