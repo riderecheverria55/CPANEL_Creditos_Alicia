@@ -124,7 +124,7 @@ h1.title {
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPROBANTE DE INGRESO</title>
+    <title>Cierre de Caja</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -140,8 +140,8 @@ h1.title {
                 <p>✉ CreditosAlicia@gmail.com</p>
             </div>
             <div class="row header">
-                <br>
-              <h1 class="title"><b>COMPROBANTE DE INGRESO</b></h1>
+              <br>
+              <h1 class="title"><b>CIERRE DE CAJA</b></h1>
             </div>
             <div class="header-info">
                 <p><b>N. Ingreso:</b> #45145</p>
@@ -152,8 +152,8 @@ h1.title {
         <div class="details">
             <div class="ingreso-datos">
                 <h2><b>Datos de ingreso</b></h2>
-                <p><b>Tipo de ingreso:</b> Orden de compra</p>
-                <p><b>Observaciones:</b> Ninguna</p>
+                <p><b>Tipo de ingreso:</b> Cierre de caja</p>
+                <p><b>Estado:</b> Cerrado</p>
             </div>
             <div class="sucursal-datos">
                 <h2><b>Datos de sucursal</b></h2>
@@ -163,47 +163,52 @@ h1.title {
         </div>
         <hr>
         <div class="table-container">
+           
             <table>
-                <thead>
-                    <tr>
-                        <th><b>Nr.</b></th>
-                        <th><b>PRODUCTO</b></th>
-                        <th><b>CANTIDAD</b></th>
-                        <th><b>PRECIO COMPRA</b></th>
-                        <th><b>PRECIO VENTA</b></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Moto Power FOX-250/2024 color AZUL</td>
-                        <td>4</td>
-                        <td>7500 Bs</td>
-                        <td>37500 Bs</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Moto Power CGL-200/2024 color blaco</td>
-                        <td>5</td>
-                        <td>8000 Bs</td>
-                        <td>16000 Bs</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Moto Power LIBERTY-200 CC/2024 color AZUL</td>
-                        <td>2</td>
-                        <td>7000 Bs</td>
-                        <td>28000 Bs</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Moto Power CB1-150/2024 color negro</td>
-                        <td>4</td>
-                        <td>6500 Bs</td>
-                        <td>32500 Bs</td>
-                    </tr>
-                </tbody>
-            </table>
+                <tr>
+                  <th colspan="2"><b>Sucursal central</b></th>
+                </tr>
+                <tr>
+                  <td>Fecha de operacion</td>
+                  <td >2024-06-15 07:55:27</td>
+                </tr>
+                <tr>
+                  <td>Nombre del cajero</td>
+                  <td>Administrador</td>
+                </tr>
+                <tr>
+                  <th><b>Movimientos</b></th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <td>Fondo de caja</td>
+                  <td>10000.00</td>
+                </tr>
+                <tr>
+                  <td>Efectivo en caja</td>
+                  <td>2222.00</td>
+                </tr>
+                <tr>
+                  <td>Ventas en efectivo</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                    <td>Deposito bancario</td>
+                    <td>0.00</td>
+                  </tr>
+                  <tr>
+                    <td>Trasferencia QR</td>
+                    <td>0.00</td>
+                  </tr>
+                <tr>
+                  <td>Faltante</td>
+                  <td>0.00</td>
+                </tr>
+                <tr>
+                  <td>Sobrante</td>
+                  <td>2222</td>
+                </tr>
+              </table>
         </div>
     </div>
 </body>
