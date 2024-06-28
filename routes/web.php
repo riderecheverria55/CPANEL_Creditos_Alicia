@@ -229,3 +229,38 @@ Route::get('/caja_pdfP', function () {
     return view('admin.caja.pdfP');
 });
 
+
+
+
+/*VENTA AL CONTADO FRONT END*/
+Route::get('/venta_contado', function () {
+    return view('admin.venta_contado.indexP');
+});
+
+/*VENTA AL CONTADO crear FRONT END*/
+Route::get('/venta_contado_crearP', function () {
+    return view('admin.venta_contado.crearP');
+});
+
+
+/*VENTA AL CONTADO PDF  FRONT END*/
+Route::get('/venta_contado_pdfP', function () {
+    return view('admin.venta_contado.pdfP');
+});
+
+
+/*VENTA AL CREDITO FRONT END*/
+Route::get('/ventaCredito', function () {
+    return view('admin.ventaCredito.indexP');
+});
+
+/*VENTA AL CREDITO FRONT END*/
+Route::get('/ventaCredito_crearP', function () {
+    return view('admin.ventaCredito.crearP');
+});
+
+
+/*VENTA AL CREDITO  PDF FRONT END*/
+Route::get('/ventaCredito_pdf', function () {
+    return view('admin.ventaCredito.pdf');
+});

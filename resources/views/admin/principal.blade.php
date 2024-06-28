@@ -149,6 +149,19 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#e-commerce" aria-expanded="true" aria-controls="e-commerce">
+              <i class="fas fa-shopping-cart menu-icon"></i>
+              <span class="menu-title">Gestion de ventas</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse show" id="e-commerce" style="">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="" previewlistener="true"> Ventas al contado  </a></li>
+                <li class="nav-item"> <a class="nav-link" href="" previewlistener="true"> Ventas al credito</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="">
                 <i class="fa fa-tags menu-icon"></i>
               <span class="menu-title">Gestion de ingreso</span>
