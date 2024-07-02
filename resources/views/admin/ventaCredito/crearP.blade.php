@@ -48,7 +48,7 @@
                           </div>
                         </div>
                         <div class="col-md-2">
-                          <label for="campo8">tipo de ciclo:</label>
+                          <label for="campo8">Tipo de ciclo:</label>
                           <select>
                           <option>Mensul</option>
                           <option>Quinsenal</option>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-md-2">
                           <div class="form-group">
-                            <label for="nombre">Persona garante<span class="required"></span></label>
+                            <label for="nombre">Garante personal<span class="required"></span></label>
                             <select name="proveedor_id" class="form-control selectric">    
                                      
                                   <option value="">carlos</option>
@@ -96,12 +96,22 @@
                                     <option value="">tv</option>
                            
                               </select>
+                              <div class="form-group">
+                                <br>
+                                <label for="nombre">observeciones<span class="required"></span></label>
+                                <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="observeciones" name="observeciones"   required>
+                            </div>
                           </div>
                         </div>
                         <div class="col-md-2">
                           <label for="nombre">Precio credito<span class="required"></span></label>
                           <div class="form-group">
                             <input type="number"  min="0"  class="form-control" id="cantidad"   required>
+                            <div class="form-group">
+                                <br>
+                                <label for="imagen">Seleccionar imagen </label>
+                              <input type="file" id="imagen">
+                          </div>
                         </div>
                       
                         </div>
@@ -152,17 +162,7 @@
                               </button>
                           </div>
                         </div>
-                        <br>
-                        <div class="form-row">
-                          <div class="form-group">
-                              <label for="observaciones">Observaciones*</label>
-                              <textarea id="observaciones" rows="3"></textarea>
-                          </div>
-                          <div class="form-group">
-                              <label for="imagen">Imagen*</label>
-                              <input type="file" id="imagen">
-                          </div>
-                      </div>
+                        </div>
                         <br>
                         <br>
                         <div class="col-md-12">
@@ -172,6 +172,7 @@
                                         <tr>
                                             <th class="text-center" style="color: #fff; width: 20px;" scope="col">CANTIDAD</th>
                                             <th class="text-center" style="color: #fff;" scope="col">PRODUCTO</th>
+                                            <th class="text-center" style="color: #fff; width: 80px;" scope="col">SALDO A PAGAR</th>
                                             <th class="text-center" style="color: #fff; width: 80px;" scope="col">CUOTA A PAGAR</th>
                                             <th class="text-center" style="color: #fff;" scope="col">SUBTOTAL</th>
                                             <th class="text-center" style="color: #fff;" scope="col">OPCIONES</th>
@@ -183,21 +184,33 @@
                                           <td class="text-center">1</td>
                                           <td class="text-center">moto</td>
                                           <td class="text-center">10000</td>
+                                          <td class="text-center">1200</td>
                                           <td class="text-center">12000</td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">1</td>
                                             <td class="text-center">moto</td>
                                             <td class="text-center">10000</td>
+                                            <td class="text-center">1200</td>
                                             <td class="text-center">12000</td>
                                           </tr>
                                     </tbody>
                                     <tfoot>
+                                      <tr>
+                                          <th class="text-center" style="color: black" scope="col"></th>
+                                          <th class="text-center" scope="col"></th>
+                                          <th class="text-center" scope="col"></th>
+                                          <th class="text-center" style="color: black" scope="col">TOTAL CREDITO</th>
+                                          <th class="text-center" scope="col"><h5 style="color: black" id="total">Bs/20000.00</h5></th>
+                                      </tr>
+                                  </tfoot>
+                                    <tfoot>
                                         <tr>
-                                            <th class="text-center" style="color: black" scope="col">TOTAL CREDITO</th>
+                                            <th class="text-center" style="color: black" scope="col"></th>
                                             <th class="text-center" scope="col"></th>
                                             <th class="text-center" scope="col"></th>
-                                            <th class="text-center" scope="col"><h5 style="color: black" id="total">Bs/ 0.00</h5></th>
+                                            <th class="text-center" style="color: black" scope="col"> TOTAL CUOTA A PAGAR</th>
+                                            <th class="text-center" scope="col"><h5 style="color: black" id="total">Bs/ 2400.00</h5></th>
                                         </tr>
                                     </tfoot>
                                 </table>

@@ -259,8 +259,13 @@ Route::get('/ventaCredito_crearP', function () {
     return view('admin.ventaCredito.crearP');
 });
 
+/*VENTA AL CREDITO FRONT END*/
+Route::get('/ventaCredito_pagarP', function () {
+    return view('admin.ventaCredito.pagarP');
+});
+
 
 /*VENTA AL CREDITO  PDF FRONT END*/
-Route::get('/ventaCredito_pdf', function () {
-    return view('admin.ventaCredito.pdf');
+Route::get('/ventaCredito_pdfContrato', function () {
+    return view('admin.ventaCredito.pdfContrato');
 });
