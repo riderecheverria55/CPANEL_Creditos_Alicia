@@ -269,3 +269,11 @@ Route::get('/ventaCredito_pagarP', function () {
 Route::get('/ventaCredito_pdfContrato', function () {
     return view('admin.ventaCredito.pdfContrato');
 });
+
+
+
+
+/*VENTA AL CREDITO  PDF PAGO FRONT END*/
+Route::get('/ventaCredito_pdfPago', function () {
+    return view('admin.ventaCredito.pdfPago');
+});

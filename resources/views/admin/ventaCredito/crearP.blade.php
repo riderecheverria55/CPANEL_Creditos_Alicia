@@ -96,22 +96,13 @@
                                     <option value="">tv</option>
                            
                               </select>
-                              <div class="form-group">
-                                <br>
-                                <label for="nombre">observeciones<span class="required"></span></label>
-                                <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="observeciones" name="observeciones"   required>
-                            </div>
+                             
                           </div>
                         </div>
                         <div class="col-md-2">
                           <label for="nombre">Precio credito<span class="required"></span></label>
                           <div class="form-group">
                             <input type="number"  min="0"  class="form-control" id="cantidad"   required>
-                            <div class="form-group">
-                                <br>
-                                <label for="imagen">Seleccionar imagen </label>
-                              <input type="file" id="imagen">
-                          </div>
                         </div>
                       
                         </div>
@@ -162,9 +153,23 @@
                               </button>
                           </div>
                         </div>
-                        </div>
-                        <br>
-                        <br>
+                      </div>
+                        <br>                
+                        <div class="row ">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="notas" class="form-label">Observecione</label>
+                              <textarea class="form-control" id="notas" rows="3"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-2">
+                            <label for="imagen">Seleccionar imagen </label>
+                            <input type="file" id="imagen">
+                          </div>
+
+                      </div>
+                       
+                       <br>  
                         <div class="col-md-12">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover" id="table">
