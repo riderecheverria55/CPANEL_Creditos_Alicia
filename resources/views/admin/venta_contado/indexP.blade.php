@@ -4,7 +4,7 @@
     <div class="content-wrapper">
       <div class="page-header">
         <h3 class="page-title">
-            Datos orden de compra
+            Venta al contado
         </h3>
       </div>
       <div class="card">
