@@ -103,10 +103,7 @@
                 showConfirmButton: false,
                 timer: 2000
             });
-
-
         </script>
-      
     @endif 
     <script type="text/javascript">
             

@@ -157,7 +157,7 @@
             <div class="collapse show" id="e-commerce" style="">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="" previewlistener="true"> Ventas al contado  </a></li>
-                <li class="nav-item"> <a class="nav-link" href="" previewlistener="true"> Ventas al credito</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{route('credito.index')}}" previewlistener="true"> Ventas al credito</a></li>
               </ul>
             </div>
           </li>

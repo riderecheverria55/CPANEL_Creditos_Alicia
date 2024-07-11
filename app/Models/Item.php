@@ -10,7 +10,7 @@ class Item extends Model
     use HasFactory;
     protected $table = 'tbl_item';
     protected $primaryKey = 'COD_ITEM';
-    protected $fillable = ['COD_ITEM','NOMBRE','CODIGO_ITEM','NUMERO_SERIE','COD_CATEGORIA',
+    protected $fillable = ['COD_ITEM','NOMBRE','CODIGO_ITEM','NUMERO_SERIE','COD_CATEGORIA','PRECIO_CREDITO',
                             'COD_SUB_CAT','ESTADO','CREATED_AT','UPDATED_AT' 
                           ];
                           

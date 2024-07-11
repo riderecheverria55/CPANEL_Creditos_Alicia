@@ -10,6 +10,8 @@ use App\Http\Controllers\CajaControlador;
 use App\Http\Controllers\IngresoInicialController;
 use App\Http\Controllers\SalidaController;
 use App\Http\Controllers\IngresoOrdenCompraController;
+use App\Http\Controllers\VentaCreditoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,14 @@ Route::get('/', function () {
  });
 
 Route::group(['middleware'=> ['auth']], function(){
+
+    //Venta Credito
+    
+    Route::get('credito',[VentaCreditoController::class, 'index'])->name('credito.index');
+    Route::get('credito/create',[VentaCreditoController::class, 'create'])->name('credito.create');
+    Route::post('credito/store',[VentaCreditoController::class, 'store'])->name('credito.store');
+    Route::get('credito/{id}/pagar',[VentaCreditoController::class, 'pagar'])->name('credito.pagar');
+    Route::post('credito/storePagar',[VentaCreditoController::class, 'storePagar'])->name('credito.storePagar');
 
     //ingresoOrdenCompra
     Route::get('ingresoOrdenCompra',[IngresoOrdenCompraController::class, 'index'])->name('ingresoOrdenCompra.index');

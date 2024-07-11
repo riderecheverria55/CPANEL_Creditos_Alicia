@@ -1,24 +1,23 @@
 @extends('admin.principal')
 @section('contenido')
-<style>
-  
-    .modal-content {
-        border-radius: 0.5rem;
-    }
-    .form-control:read-only {
-        background-color: #f8f9fa;
-    }
-    .modal .modal-dialog .modal-content .modal-body {
-        padding: 25px 45px;
-
-}
-@media (min-width: 768px) {
-    .col-md-6 {
-        flex: 0 0 40%;
-        max-width: 25%;
-    }
-}    
-</style>
+    <style>
+    
+        .modal-content {
+            border-radius: 0.5rem;
+        }
+        .form-control:read-only {
+            background-color: #f8f9fa;
+        }
+        .modal .modal-dialog .modal-content .modal-body {
+            padding: 25px 45px;
+        }
+        @media (min-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 40%;
+                max-width: 25%;
+            }
+        }    
+    </style>
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="page-header">
@@ -44,7 +43,7 @@
                                                 <a href="" class="btn btn-dark">
                                                     <i class="fas fa-undo-alt"></i>
                                                 </a>
-                                                <a href="" class="btn btn-dark ">
+                                                <a href="{{route('credito.create')}}" class="btn btn-dark ">
                                                     + Agregar nuevo
                                                 </a>
                                             </div>
@@ -61,7 +60,6 @@
                                       <table class="table table-bordered table-hover">
                                           <thead class="bg-primary">
                                               <th class="text-center" style="color: #fff;">ID</th>
-                                              <th class="text-center" style="color: #fff;">CODIGO</th>
                                               <th class="text-center" style="color: #fff;">CLIENTE</th>
                                               <th class="text-center" style="color: #fff;">TIPO CUOTA</th>
                                               <th class="text-center" style="color: #fff;">N. CUOTAS</th>
@@ -70,44 +68,48 @@
                                               <th class="text-center" style="color: #fff;">ACCIONES</th>
                                           </thead>
                                           <tbody>
-                                                  <tr>
-                                                      <td class="text-center">1</td>
-                                                      <td class="text-center">00045</td>
-                                                      <td class="text-center">JUAN ZANCHES</td>
-                                                      <td class="text-center">MENSUAL</td> 
-                                                      <td class="text-center">12</td>
-                                                      <td class="text-center">20000</td>
-                                                      <td class="text-center"><label class="badge badge-danger">PENDIENTE</label></td>
-                                                      <td style="width: 20%;">
-                                                        <center>
-                                                        <a class="btn btn-outline-danger" href="#" title="pdf">
-                                                            <i class="fa fa-file-pdf"></i></a>
-                                                            <a class="btn btn-outline-info" href="#" title="Editar"
-                                                            data-toggle="modal" data-target="#editarProveedorModal">PAGAR
-                                                            <i class="far fa-edit"></i></a>
-                                                        </center>
-                                                    </td>  
-
-                                                  </tr>
-                                                  <tr>
-                                                    <td class="text-center">2</td>
-                                                      <td class="text-center">00045</td>
-                                                      <td class="text-center">JUAN ZANCHES</td>
-                                                      <td class="text-center"> QUINSENAL</td> 
-                                                      <td class="text-center">6</td>
-                                                      <td class="text-center">3000</td>
-                                                      <td class="text-center"><label class="badge badge-success">CANCELADO </label></td>
-                                                      <td style="width: 20%;">
-                                                      <center>
-                                                      <a class="btn btn-outline-danger" href="#" title="pdf">
-                                                          <i class="fa fa-file-pdf"></i></a>
-                                                          <a class="btn btn-outline-info" href="#" title="Editar">PAGAR
-                                                            <i class="far fa-edit"></i></a>
-                                                      </center>
-                                                  </td>  
-
-                                                </tr>                       
-                                                
+                                            <?php $contador = 1?>
+                                            @foreach ($resultados  as $item)
+                                            <tr>
+                                              <td class="text-center" scope="row">
+                                                <?php echo $contador;?>
+                                              </td>
+                                              <td class="text-center">{{$item->NOMBRE}} {{$item->APELLIDO}}</td>
+                                              <td class="text-center">{{$item->TIPO_CICLO }}</td>
+                                              <td class="text-center">{{$item->N_CUOTAS }}</td>
+                                              <td class="text-center">{{$item->PRECIO_CREDITO }}</td>
+                                              <td>
+                                                @if ($item->ESTADO == 1)
+                                                    <span class="badge badge-danger">Pendiente</span>
+                                                @elseif ($item->ESTADO == 2)
+                                                    <span class="badge badge-success">Cancelado</span>
+                                                @else
+                                                    <span class="badge badge-secondary">Desconocido</span>
+                                                @endif
+                                            </td>
+                                              <td style="width: 20%;">
+                                                <center>
+                                                    <a class="btn btn-outline-danger" href="#" title="pdf">
+                                                        <i class="fa fa-file-pdf"></i>
+                                                    </a>
+                                                    @if ($item->ESTADO == 1)
+                                                        <a class="btn btn-outline-info" href="{{ route('credito.pagar', $item->COD_CREDITO) }}" title="Pagar">PAGAR
+                                                            <i class="far fa-edit"></i>
+                                                        </a>
+                                                    @else
+                                                        <a class="btn btn-outline-info disabled" href="#" title="Pagar">PAGAR
+                                                            <i class="far fa-edit"></i>
+                                                        </a>
+                                                    @endif
+                                                </center>
+                                            </td> 
+                                            </tr>
+                    
+                                    
+                    
+                                            <?php  $contador++;?>
+                                            @endforeach
+                                                             
                                           </tbody>
                                       </table>
                                     </div>     
@@ -119,4 +121,17 @@
         </div>
     </div>
 </div>
+@endsection
+@section('script')  
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Éxito',
+                text: '¡Credito creado con exito..',
+                showConfirmButton: false,
+                timer: 2000
+            });
+        </script>
+    @endif 
 @endsection
